@@ -62,7 +62,7 @@ export function Hero({ user }: HeroProps) {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm font-medium text-white/90 transition-colors hover:text-white"
+                                className="text-md font-medium font-arsenal text-white/90 transition-colors hover:text-white"
                             // className="hidden rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-gray-100 backdrop-blur-md transition-colors hover:bg-white/20 sm:inline-flex"
                             >
                                 {link.label}
@@ -71,7 +71,7 @@ export function Hero({ user }: HeroProps) {
                     </div>
 
                     {/* Auth / Avatar */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 mt-[-32px]">
                         <NavAuth user={user} />
 
                         {/* Mobile Menu */}
@@ -87,7 +87,7 @@ export function Hero({ user }: HeroProps) {
                             <br />
                             Inspired by Nature
                         </h1>
-                        <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl">
+                        <p className="font-arsenalSC mt-6 max-w-xl text-lg leading-relaxed text-white md:text-xl">
                             Breathe deep, unwind fully, and enjoy the warmth. Discover saunas
                             designed to nurture calm, comfort, and an elevated sense of
                             wellness.

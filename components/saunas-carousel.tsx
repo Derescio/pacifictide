@@ -7,6 +7,7 @@ const saunaCards = [
         category: "Indoor Sauna",
         title: "Nordic Pine Classic",
         src: "/images/huum-v8U1U6FVkeg-unsplash.jpg",
+        url: "/saunas/nordic-pine-classic",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -27,6 +28,7 @@ const saunaCards = [
         category: "Outdoor Sauna",
         title: "Forest Retreat Barrel",
         src: "/images/stephen-h-2fXu4vWSbcA-unsplash.jpg",
+        url: "/saunas/forest-retreat-barrel",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -47,6 +49,7 @@ const saunaCards = [
         category: "Premium Series",
         title: "Coastal Cedar Suite",
         src: "/images/huum-v8U1U6FVkeg-unsplash.jpg",
+        url: "/saunas/coastal-cedar-suite",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -67,6 +70,7 @@ const saunaCards = [
         category: "Compact Series",
         title: "Urban Zen Pod",
         src: "/images/stephen-h-2fXu4vWSbcA-unsplash.jpg",
+        url: "/saunas/urban-zen-pod",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -87,6 +91,7 @@ const saunaCards = [
         category: "Traditional",
         title: "Finnish Heritage",
         src: "/images/huum-v8U1U6FVkeg-unsplash.jpg",
+        url: "/saunas/finnish-heritage",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">

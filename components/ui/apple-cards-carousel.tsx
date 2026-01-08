@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import Link from "next/link";
 
 interface CarouselProps {
   items: React.ReactElement[];
@@ -26,6 +27,7 @@ type Card = {
   title: string;
   category: string;
   content: React.ReactNode;
+  url: string;
 };
 
 export const CarouselContext = createContext<{
@@ -98,7 +100,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         >
           <div
             className={cn(
-              "absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l",
+              "absolute right-0 z-1000 h-auto w-[5%] overflow-hidden bg-linear-to-l",
             )}
           ></div>
 
@@ -211,7 +213,7 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
+              className="relative z-60 mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
             >
               <button
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
@@ -232,8 +234,22 @@ export const Card = ({
                 {card.title}
               </motion.p>
               <div className="py-10">{card.content}</div>
+              <motion.a
+                target="_self"
+                href={card.url}
+                onClick={handleClose}
+                layoutId={layout ? `view-product-${card.title}` : undefined}
+                className="mt-4 text-xl font-semibold text-neutral-700 md:text-2xl dark:text-white"
+              >
+                View Product
+              </motion.a>
             </motion.div>
+
+            {/* <div className="absolute inset-0 z-60 h-full w-full bg-black/50 backdrop-blur-lg" />
+            <div className="absolute inset-0 z-60 h-full w-full bg-white/50 backdrop-blur-lg" />
+            <div className="absolute inset-0 z-60 h-full w-full bg-black/50 backdrop-blur-lg" /> */}
           </div>
+
         )}
       </AnimatePresence>
       <motion.button
@@ -241,7 +257,7 @@ export const Card = ({
         onClick={handleOpen}
         className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-linear-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
@@ -251,7 +267,7 @@ export const Card = ({
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-balance text-white md:text-3xl"
           >
             {card.title}
           </motion.p>

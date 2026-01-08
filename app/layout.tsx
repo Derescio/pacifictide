@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display, Arsenal, Arsenal_SC } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 
@@ -8,6 +8,19 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const arsenal = Arsenal({
+  variable: "--font-arsenal",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "700"],
+});
+
+const arsenalSC = Arsenal_SC({
+  variable: "--font-arsenal-sc",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "700"],
+});
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -32,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${arsenal.variable} ${arsenalSC.variable} antialiased`}
       >
         <Providers>{children}</Providers>
       </body>
