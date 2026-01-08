@@ -274,15 +274,9 @@ export const BlurImage = ({
   className,
   alt,
 }: ImageProps) => {
-  const [isLoading, setLoading] = useState(true);
   return (
     <img
-      className={cn(
-        "h-full w-full transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
-        className,
-      )}
-      onLoad={() => setLoading(false)}
+      className={cn("h-full w-full object-cover", className)}
       src={src as string}
       width={typeof width === "number" ? width : undefined}
       height={typeof height === "number" ? height : undefined}
