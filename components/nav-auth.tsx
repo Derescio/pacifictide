@@ -4,6 +4,7 @@ import { signOut } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { UserCircle, UserCircle2 } from 'lucide-react'
 
 interface NavAuthProps {
     user: {
@@ -20,20 +21,26 @@ export function NavAuth({ user }: NavAuthProps) {
 
     if (!user) {
         return (
-            <div className="flex items-center gap-2">
-                <Link
-                    href="/login"
-                    className="hidden rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:inline-flex"
-                >
-                    Sign In
+            // <div className="flex items-center gap-2">
+            //     <Link
+            //         href="/login"
+            //         className="hidden rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 sm:inline-flex"
+            //     >
+            //         Sign In
+            //     </Link>
+            //     <Link
+            //         href="/signup"
+            //         className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-white/90"
+            //     >
+            //         Sign Up
+            //     </Link>
+            // </div>
+            <>
+                <Link href="/login">
+                    <UserCircle className=" rounded-full p-2 bg-white/10 h-12 w-12  text-gray-50" />
+                    {/* <span className="hidden sm:inline-block text-sm font-semibold text-gray-100">Sign In</span> */}
                 </Link>
-                <Link
-                    href="/signup"
-                    className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-white/90"
-                >
-                    Sign Up
-                </Link>
-            </div>
+            </>
         );
     }
 

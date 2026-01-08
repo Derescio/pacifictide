@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NavAuth } from "@/components/nav-auth";
+import { MobileNav } from "@/components/mobile-nav";
 
 const navLinks = [
     { href: "/", label: "Home" },
@@ -26,15 +27,15 @@ export function Hero({ user }: HeroProps) {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
-                    src="/images/stephen-h-2fXu4vWSbcA-unsplash.jpg"
+                    src="/images/bg_hero.jpg"
                     alt="Mountain landscape with lake"
                     fill
                     className="object-cover"
                     priority
                 />
                 {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/45" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-black/72" />
+                <div className="absolute inset-0 bg-linear-to-r from-black/30 via-transparent to-transparent" />
             </div>
 
             {/* Content */}
@@ -42,23 +43,27 @@ export function Hero({ user }: HeroProps) {
                 {/* Navigation */}
                 <nav className="flex items-center justify-between px-6 py-6 md:px-10 lg:px-12">
                     {/* Logo */}
-                    <Link href="/" className="flex-shrink-0">
+                    <Link href="/" className="hrink-0">
                         <Image
                             src="/images/White 2.png"
                             alt="Pacific Tide"
-                            width={280}
-                            height={140}
-                            className="h-14 w-auto md:h-16 lg:h-[140px]"
+                            width={0}
+                            height={0}
+                            // style={{ width: 'auto', height: 'auto' }}
+                            priority
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="h-48 w-auto md:h-48 lg:h-[140px]"
                         />
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden items-center gap-8 lg:flex">
+                    <div className="hidden items-center gap-8 lg:flex lg:mt-[-10px]">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
                                 className="text-sm font-medium text-white/90 transition-colors hover:text-white"
+                            // className="hidden rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-gray-100 backdrop-blur-md transition-colors hover:bg-white/20 sm:inline-flex"
                             >
                                 {link.label}
                             </Link>
@@ -69,23 +74,8 @@ export function Hero({ user }: HeroProps) {
                     <div className="flex items-center gap-4">
                         <NavAuth user={user} />
 
-                        {/* Mobile Menu Button */}
-                        <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-colors hover:bg-white/20 lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                                />
-                            </svg>
-                        </button>
+                        {/* Mobile Menu */}
+                        <MobileNav />
                     </div>
                 </nav>
 
