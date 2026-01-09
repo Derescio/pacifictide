@@ -6,10 +6,10 @@ const footerLinks = {
         title: "Our Company",
         links: [
             { label: "About Us", href: "/about" },
-            { label: "Our Story", href: "/story" },
-            { label: "Craftsmanship", href: "/craftsmanship" },
-            { label: "Sustainability", href: "/sustainability" },
-            { label: "Careers", href: "/careers" },
+            // { label: "Our Story", href: "/story" },
+            // { label: "Craftsmanship", href: "/craftsmanship" },
+            // { label: "Sustainability", href: "/sustainability" },
+            // { label: "Careers", href: "/careers" },
         ],
     },
     products: {
@@ -18,8 +18,8 @@ const footerLinks = {
             { label: "Saunas", href: "/saunas" },
             { label: "Heaters", href: "/heaters" },
             { label: "Hot & Cold Plunge", href: "/plunge" },
-            { label: "Accessories", href: "/accessories" },
-            { label: "Custom Builds", href: "/custom" },
+            // { label: "Accessories", href: "/accessories" },
+            // { label: "Custom Builds", href: "/custom" },
         ],
     },
     support: {
@@ -39,8 +39,8 @@ const footerLinks = {
             { label: "Blog", href: "/blog" },
             { label: "Facebook", href: "https://facebook.com", external: true },
             { label: "Instagram", href: "https://instagram.com", external: true },
-            { label: "Pinterest", href: "https://pinterest.com", external: true },
-            { label: "YouTube", href: "https://youtube.com", external: true },
+            //     { label: "Pinterest", href: "https://pinterest.com", external: true },
+            //     { label: "YouTube", href: "https://youtube.com", external: true },
         ],
     },
 };
