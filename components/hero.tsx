@@ -34,7 +34,7 @@ export function Hero({ user }: HeroProps) {
                     priority
                 />
                 {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/72" />
+                <div className="absolute inset-0 bg-black/45 md:bg-black/72" />
                 <div className="absolute inset-0 bg-linear-to-r from-black/30 via-transparent to-transparent" />
             </div>
 
