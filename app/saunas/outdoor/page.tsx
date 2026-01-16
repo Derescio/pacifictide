@@ -1,17 +1,14 @@
-import { ProductCard } from '@/components/product-card';
-import Link from 'next/link';
 import { prisma } from "@/lib/prisma";
+import { ProductCard } from "@/components/product-card";
+import Link from "next/link";
 
-
-
-
-
-const CubePage = async () => {
+export default async function OutdoorPage() {
+    // Fetch hot tubs, cold plunge tubs, and outdoor showers
     const products = await prisma.product.findMany({
         where: {
             isActive: true,
             type: {
-                in: ["cube"],
+                in: ["outdoor", "outdoorshowers"],
             },
         },
         include: {
@@ -52,14 +49,14 @@ const CubePage = async () => {
                 {/* Category Sections */}
                 <div className="space-y-12">
                     {/* Hot Tubs & Cold Plunge */}
-                    {products.filter((p) => p.type === "cube").length > 0 && (
+                    {products.filter((p) => p.type === "outdoor").length > 0 && (
                         <section>
                             <h2 className="mb-6 text-2xl font-semibold text-neutral-900">
-                                Cube Saunas
+                                Hot Tubs & Cold Plunge
                             </h2>
                             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                                 {products
-                                    .filter((p) => p.type === "cube")
+                                    .filter((p) => p.type === "outdoor")
                                     .map((product) => (
                                         <ProductCard key={product.id} product={product} />
                                     ))}
@@ -68,7 +65,7 @@ const CubePage = async () => {
                     )}
 
                     {/* Outdoor Showers */}
-                    {/* {products.filter((p) => p.type === "outdoorshowers").length > 0 && (
+                    {products.filter((p) => p.type === "outdoorshowers").length > 0 && (
                         <section>
                             <h2 className="mb-6 text-2xl font-semibold text-neutral-900">Outdoor Showers</h2>
                             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -79,7 +76,7 @@ const CubePage = async () => {
                                     ))}
                             </div>
                         </section>
-                    )} */}
+                    )}
 
                     {/* Empty State */}
                     {products.length === 0 && (
@@ -101,4 +98,3 @@ const CubePage = async () => {
     );
 }
 
-export default CubePage

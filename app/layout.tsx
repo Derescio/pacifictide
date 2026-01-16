@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { auth } from "@/lib/auth";
 import { Geist, Geist_Mono, Playfair_Display, Arsenal, Arsenal_SC } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { Hero } from "@/components/hero";
+import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,18 +40,26 @@ export const metadata: Metadata = {
   description: "Luxury saunas inspired by nature",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${arsenal.variable} ${arsenalSC.variable} antialiased`}
-      >
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
+  const session = await auth();
+
+  {
+    return (
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${arsenal.variable} ${arsenalSC.variable} antialiased`}
+        >
+          <div className="px-2.5 pt-2.5">
+            <Hero user={session?.user ?? null} />
+          </div>
+          <Providers>{children}</Providers>
+          <Footer />
+        </body>
+      </html>
+    );
+  }
 }

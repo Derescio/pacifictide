@@ -9,9 +9,9 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-neutral-200">
       {/* Hero Section - Full width with 10px gap on sides */}
-      <div className="px-2.5 pt-2.5">
+      {/* <div className="px-2.5 pt-2.5">
         <Hero user={session?.user ?? null} />
-      </div>
+      </div> */}
 
       {/* Site Container - max-w-6xl for other content */}
       <div className="mx-auto w-full max-w-6xl px-2.5">
@@ -22,7 +22,7 @@ export default async function Home() {
       </div>
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

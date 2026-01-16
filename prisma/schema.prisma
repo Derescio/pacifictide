@@ -65,12 +65,15 @@ model Product {
     id             String   @id @default(cuid())
     name           String
     description    String
-    type           String
+    type           String // Sauna category: cube, barrel, indoor, outdoor, outdoorshowers
+    designation    String // Material/collection: e.g., "Canadian Timber"
+    collectionType String?
     series         String?
     dimensions     String?
     specifications Json?
     basePrice      Decimal
-    woodType       String
+    woodType       String?
+    displayOrder   Int      @default(0) // Control display order on pages
     isActive       Boolean  @default(true)
     isFeatured     Boolean  @default(false)
     createdAt      DateTime @default(now())
@@ -84,17 +87,19 @@ model Product {
 model Heater {
     id                  String   @id @default(cuid())
     name                String
-    model               String
-    power               String
+    model               String   @unique
+    power               Decimal
     description         String
     basePrice           Decimal
-    specifications      Json?
-    warranty            String?
-    electricianRequired Boolean
-    voltage             String
-    minStoneWeightKg    Int
+    specifications      Json? // Room size, stone capacity, dimensions, weight
+    options             Json? // Stones, controls, safety railing options
+    warranty            Json? // Duration and description
+    installation        Json? // Requirements and safety distances
+    features            Json? // Array of feature objects
+    electricianRequired Boolean  @default(true)
+    voltage             String?
+    minStoneWeightKg    Int?
     safetyRequirements  String?
-    features            String?
     isActive            Boolean  @default(true)
     isFeatured          Boolean  @default(false)
     createdAt           DateTime @default(now())
@@ -119,6 +124,9 @@ enum OptionType {
     FINISH
     STONE
     HEATER
+    INSTALLATION
+    WOOD_TYPE
+    CONTROL_TYPE
 }
 
 enum StoneType {
@@ -135,18 +143,21 @@ model ProductOption {
     id         String     @id @default(cuid())
     name       String
     optionType OptionType
+    category   String? // Group related options (e.g., "installation", "wood_finish")
     price      Decimal
     isRequired Boolean    @default(false)
+    isDefault  Boolean    @default(false)
 
     product   Product @relation(fields: [productId], references: [id])
     productId String
 }
 
 model Image {
-    id      String  @id @default(cuid())
-    url     String
-    altText String?
-    order   Int?
+    id        String  @id @default(cuid())
+    url       String
+    altText   String?
+    order     Int?
+    isPrimary Boolean @default(false)
 
     product   Product? @relation(fields: [productId], references: [id])
     productId String?

@@ -19,7 +19,7 @@ export const navLinks = [
     { href: "/", label: "Home" },
     { href: "/saunas", label: "Saunas", hasDropdown: true },
     { href: "/heaters", label: "Heaters" },
-    { href: "/plunge", label: "Hot and Cold Plunge" },
+    { href: "/outdoor", label: "Hot and Cold Plunge" },
     { href: "/about", label: "About" },
 ];
 
