@@ -85,25 +85,28 @@ model Product {
 }
 
 model Heater {
-    id                  String   @id @default(cuid())
-    name                String
-    model               String   @unique
-    power               Decimal
-    description         String
-    basePrice           Decimal
-    specifications      Json? // Room size, stone capacity, dimensions, weight
-    options             Json? // Stones, controls, safety railing options
-    warranty            Json? // Duration and description
-    installation        Json? // Requirements and safety distances
-    features            Json? // Array of feature objects
-    electricianRequired Boolean  @default(true)
-    voltage             String?
-    minStoneWeightKg    Int?
-    safetyRequirements  String?
-    isActive            Boolean  @default(true)
-    isFeatured          Boolean  @default(false)
-    createdAt           DateTime @default(now())
-    updatedAt           DateTime @updatedAt
+    id          String     @id @default(cuid())
+    type        HeaterType @default(ELECTRIC)
+    name        String
+    model       String     @unique
+    description String
+    basePrice   Decimal
+
+    // Shared specifications for both types
+    specifications Json? // Room size, stone capacity, dimensions, weight
+    options        Json? // Stones, controls, safety railing
+    installation   Json? // Requirements, safety distances
+    warranty       Json? // Duration and description
+    features       Json? // Array of feature objects
+
+    // Type-specific specifications
+    electricSpec Json? // Electric only: power, voltage, electricianRequired, includes, requires
+    woodSpec     Json? // Wood only: fuel type, chimney specs, etc.
+
+    isActive   Boolean  @default(true)
+    isFeatured Boolean  @default(false)
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
 
     products ProductHeater[]
     images   Image[]
@@ -169,4 +172,9 @@ model Image {
 enum Role {
     ADMIN
     USER
+}
+
+enum HeaterType {
+    ELECTRIC
+    WOOD
 }

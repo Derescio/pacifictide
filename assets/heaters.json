@@ -1,860 +1,1234 @@
-[{
-  "_id": {
-    "$oid": "6814094308165731c6027fc6"
-  },
-  "name": "HUUM DROP Electric Sauna Heater 6 kW",
-  "model": "DROP-6",
-  "power": 6,
-  "description": "HUUM DROP Electric Sauna Heater 6 kW is the standout model among HUUM heaters, largely thanks to its compact design. It is unique in the HUUM range as the only wall-mounted heater, saving considerable space in the sauna without compromising on the generous stone capacity that HUUM is known for. Inspired by the natural form of a water drop, its design introduces a rounded, softening element to the typically angular sauna space, infusing it with a touch of elegance.\n\nFunctionality-wise, the Drop excels. It can hold up to 60 kg of stones, outperforming many wood-burning and electric heaters in stone capacity, which is crucial for prolonged and consistent steam production. This large stone capacity allows for the emission of gentle, soothing heat. When water is added, it generates a rich steam, more abundant than what is produced by heaters with a higher metal content, which can often lead to a less comfortable, harsher heat.\n\nThe inclusion of a popular Wi-Fi control feature, enabling connection to the HUUM app for remote sauna activation, adds a layer of convenience, ensuring your sauna is ready for use the moment you arrive home. The combination of thoughtful design, superior functionality, and user convenience makes the Drop model, and HUUM heaters in general, highly regarded in the market.",
-  "basePrice": 1585,
-  "specifications": {
-    "roomSize": {
-      "min": 5,
-      "max": 9,
-      "imperial_min": 177,
-      "imperial_max": 318
-    },
-    "stoneCapacity": {
-      "weight": 55,
-      "imperial_weight": 121,
-      "diameter": {
+[
+  {
+    "name": "HUUM DROP Electric Sauna Heater 6 kW",
+    "model": "DROP-6",
+    "power": 6,
+    "description": "HUUM DROP Electric Sauna Heater 6 kW is the standout model among HUUM heaters, largely thanks to its compact design. It is unique in the HUUM range as the only wall-mounted heater, saving considerable space in the sauna without compromising on the generous stone capacity that HUUM is known for. Inspired by the natural form of a water drop, its design introduces a rounded, softening element to the typically angular sauna space, infusing it with a touch of elegance.\n\nFunctionality-wise, the Drop excels. It can hold up to 60 kg of stones, outperforming many wood-burning and electric heaters in stone capacity, which is crucial for prolonged and consistent steam production. This large stone capacity allows for the emission of gentle, soothing heat. When water is added, it generates a rich steam, more abundant than what is produced by heaters with a higher metal content, which can often lead to a less comfortable, harsher heat.\n\nThe inclusion of a popular Wi-Fi control feature, enabling connection to the HUUM app for remote sauna activation, adds a layer of convenience, ensuring your sauna is ready for use the moment you arrive home. The combination of thoughtful design, superior functionality, and user convenience makes the Drop model, and HUUM heaters in general, highly regarded in the market.",
+    "basePrice": 1585,
+    "specifications": {
+      "roomSize": {
         "min": 5,
-        "max": 10,
-        "imperial_min": 2,
-        "imperial_max": 4
-      }
-    },
-    "dimensions": {
-      "height": {
-        "metric": 590,
-        "imperial": 23.3
+        "max": 9,
+        "imperial_min": 177,
+        "imperial_max": 318
       },
-      "width": {
-        "metric": 390,
-        "imperial": 15.35
+      "stoneCapacity": {
+        "weight": 55,
+        "imperial_weight": 121,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
       },
-      "depth": {
-        "metric": 335,
-        "imperial": 13.2
-      }
-    },
-    "weight": {
-      "metric": 11,
-      "imperial": 24.3
-    }
-  },
-  "options": {
-    "stones": [
-      {
-        "type": "Standard Stones",
-        "description": "",
-        "weight": {
-          "metric": 55,
-          "imperial": 121
+      "dimensions": {
+        "height": {
+          "metric": 590,
+          "imperial": 23.3
         },
-        "price": 352,
-        "isDefault": true,
-        "_id": {
-          "$oid": "6814094308165731c6027fc7"
-        }
-      },
-      {
-        "type": "No Stones",
-        "description": "",
-        "weight": {
-          "metric": 0,
-          "imperial": 0
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
         },
-        "price": 0,
-        "isDefault": false,
-        "_id": {
-          "$oid": "6814094308165731c6027fc8"
-        }
-      }
-    ],
-    "controls": [
-      {
-        "type": "UKU Local Control",
-        "description": "Standard wall-mounted control panel",
-        "price": 1115,
-        "isDefault": true,
-        "_id": {
-          "$oid": "6814094308165731c6027fc9"
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
         }
       },
-      {
-        "type": "UKU WiFi Control",
-        "description": "Smart control with mobile app connectivity",
-        "price": 1660,
-        "isDefault": false,
-        "_id": {
-          "$oid": "6814094308165731c6027fca"
-        }
+      "weight": {
+        "metric": 11,
+        "imperial": 24.3
       }
-    ],
-    "safetyRailing": [
-      {
-        "type": "No Railing",
-        "description": "Standard installation without safety railing",
-        "price": 0,
-        "isDefault": true,
-        "_id": {
-          "$oid": "6814094308165731c6027fcb"
+    },
+    "options": {
+      "stones": [
+        {
+          "type": "Standard Stones",
+          "description": "",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 352,
+          "isDefault": true
+        },
+        {
+          "type": "No Stones",
+          "description": "",
+          "weight": {
+            "metric": 0,
+            "imperial": 0
+          },
+          "price": 0,
+          "isDefault": false
         }
+      ],
+      "controls": [
+        {
+          "type": "UKU Local Control",
+          "description": "Standard wall-mounted control panel",
+          "price": 1115,
+          "isDefault": true
+        },
+        {
+          "type": "UKU WiFi Control",
+          "description": "Smart control with mobile app connectivity",
+          "price": 1660,
+          "isDefault": false
+        }
+      ],
+      "safetyRailing": [
+        {
+          "type": "No Railing",
+          "description": "Standard installation without safety railing",
+          "price": 0,
+          "isDefault": true
+        },
+        {
+          "type": "Cedar Safety Railing",
+          "description": "Protective cedar wood railing for added safety",
+          "price": 365,
+          "isDefault": false
+        }
+      ]
+    },
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
       },
       {
-        "type": "Cedar Safety Railing",
-        "description": "Protective cedar wood railing for added safety",
-        "price": 365,
-        "isDefault": false,
-        "_id": {
-          "$oid": "6814094308165731c6027fcc"
-        }
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460865/HUUM-DROP-p_zockuc.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460863/HUUM-DROP-Barrel-1_ya6owm.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746294358/HUUM-DROP-6_xnygvp.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
       }
-    ]
-  },
-  "images": [
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
-      "isPrimary": true,
-      "_id": {
-        "$oid": "6814094308165731c6027fcd"
-      }
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460865/HUUM-DROP-p_zockuc.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
-      "isPrimary": false,
-      "_id": {
-        "$oid": "6814094308165731c6027fce"
-      }
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460863/HUUM-DROP-Barrel-1_ya6owm.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
-      "isPrimary": false,
-      "_id": {
-        "$oid": "6814094308165731c6027fcf"
-      }
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746294358/HUUM-DROP-6_xnygvp.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
-      "isPrimary": false,
-      "_id": {
-        "$oid": "6814094308165731c6027fd0"
-      }
-    }
-  ],
-  "warranty": {
-    "duration": 3,
-    "description": "3-year manufacturer warranty on electrical components"
-  },
-  "installation": {
-    "requirements": [
-      "Professional installation required",
-      "240V electrical connection",
-      "UKU sauna control system required",
-      "Minimum 55 kg of sauna stones with 5-10 cm diameter"
     ],
-    "safetyDistances": {
-      "sides": 150,
-      "front": 200,
-      "back": 150,
-      "top": 200
-    }
-  },
-  "features": [
-    {
-      "title": "Large Stone Capacity",
-      "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation",
-      "_id": {
-        "$oid": "6814094308165731c6027fd1"
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
+    },
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
       }
     },
-    {
-      "title": "Space-Saving Design",
-      "description": "Wall-mounted design saves floor space while maintaining high performance",
-      "_id": {
-        "$oid": "6814094308165731c6027fd2"
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "Wall-mounted design saves floor space while maintaining high performance"
+      },
+      {
+        "title": "Smart Control Option",
+        "description": "Optional WiFi control for remote operation via smartphone"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
       }
-    },
-    {
-      "title": "Smart Control Option",
-      "description": "Optional WiFi control for remote operation via smartphone",
-      "_id": {
-        "$oid": "6814094308165731c6027fd3"
-      }
-    },
-    {
-      "title": "Elegant Aesthetics",
-      "description": "Unique water drop design adds a sophisticated touch to your sauna",
-      "_id": {
-        "$oid": "6814094308165731c6027fd4"
-      }
-    }
-  ],
-  "isFeatured": true,
-  "createdAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
+    ],
+    "isFeatured": true
   },
-  "updatedAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6814094308165731c6027fc7"
-  },
-  "name": "HUUM DROP Electric Sauna Heater 7.5 kW",
-  "model": "DROP-7.5",
-  "power": 6,
-  "description": "HUUM DROP Electric Sauna Heater 7.5 kW is the standout model among HUUM heaters, largely thanks to its compact design. It is unique in the HUUM range as the only wall-mounted heater, saving considerable space in the sauna without compromising on the generous stone capacity that HUUM is known for. Inspired by the natural form of a water drop, its design introduces a rounded, softening element to the typically angular sauna space, infusing it with a touch of elegance.Functionality-wise, the Drop excels. It can hold up to 60 kg of stones, outperforming many wood-burning and electric heaters in stone capacity, which is crucial for prolonged and consistent steam production. This large stone capacity allows for the emission of gentle, soothing heat. When water is added, it generates a rich steam, more abundant than what is produced by heaters with a higher metal content, which can often lead to a less comfortable, harsher heat. The inclusion of a popular Wi-Fi control feature, enabling connection to the HUUM app for remote sauna activation, adds a layer of convenience, ensuring your sauna is ready for use the moment you arrive home. The combination of thoughtful design, superior functionality, and user convenience makes the Drop model, and HUUM heaters in general, highly regarded in the market.",
-  "basePrice": 1760,
-  "specifications": {
-    "roomSize": {
-      "min": 5,
-      "max": 9,
-      "imperial_min": 177,
-      "imperial_max": 318
-    },
-    "stoneCapacity": {
-      "weight": 55,
-      "imperial_weight": 121,
-      "diameter": {
+  {
+    "name": "HUUM DROP Electric Sauna Heater 7.5 kW",
+    "model": "DROP-7.5",
+    "power": 6,
+    "description": "HUUM DROP Electric Sauna Heater 7.5 kW is the standout model among HUUM heaters, largely thanks to its compact design. It is unique in the HUUM range as the only wall-mounted heater, saving considerable space in the sauna without compromising on the generous stone capacity that HUUM is known for. Inspired by the natural form of a water drop, its design introduces a rounded, softening element to the typically angular sauna space, infusing it with a touch of elegance.Functionality-wise, the Drop excels. It can hold up to 60 kg of stones, outperforming many wood-burning and electric heaters in stone capacity, which is crucial for prolonged and consistent steam production. This large stone capacity allows for the emission of gentle, soothing heat. When water is added, it generates a rich steam, more abundant than what is produced by heaters with a higher metal content, which can often lead to a less comfortable, harsher heat. The inclusion of a popular Wi-Fi control feature, enabling connection to the HUUM app for remote sauna activation, adds a layer of convenience, ensuring your sauna is ready for use the moment you arrive home. The combination of thoughtful design, superior functionality, and user convenience makes the Drop model, and HUUM heaters in general, highly regarded in the market.",
+    "basePrice": 1760,
+    "specifications": {
+      "roomSize": {
         "min": 5,
-        "max": 10,
-        "imperial_min": 2,
-        "imperial_max": 4
-      }
-    },
-    "dimensions": {
-      "height": {
-        "metric": 590,
-        "imperial": 23.3
+        "max": 9,
+        "imperial_min": 177,
+        "imperial_max": 318
       },
-      "width": {
-        "metric": 390,
-        "imperial": 15.35
+      "stoneCapacity": {
+        "weight": 55,
+        "imperial_weight": 121,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
       },
-      "depth": {
-        "metric": 335,
-        "imperial": 13.2
-      }
-    },
-    "weight": {
-      "metric": 11,
-      "imperial": 24.3
-    }
-  },
-  "options": {
-    "stones": [
-      {
-        "type": "Standard Stones",
-        "description": "55 kg / 121 lb",
-        "weight": {
-          "metric": 55,
-          "imperial": 121
+      "dimensions": {
+        "height": {
+          "metric": 590,
+          "imperial": 23.3
         },
-        "price": 352,
-        "isDefault": true,
-        "_id": "6814094308165731c6027fc8"
-      },
-      {
-        "type": "No Stones",
-        "description": "0 kg (0 lb)",
-        "weight": {
-          "metric": 55,
-          "imperial": 121
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
         },
-        "price": 0,
-        "isDefault": false,
-        "_id": "6814094308165731c6027fc9"
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
+        }
+      },
+      "weight": {
+        "metric": 11,
+        "imperial": 24.3
       }
-    ],
-    "controls": [
+    },
+    "options": {
+      "stones": [
+        {
+          "type": "Standard Stones",
+          "description": "55 kg / 121 lb",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 352,
+          "isDefault": true
+        },
+        {
+          "type": "No Stones",
+          "description": "0 kg (0 lb)",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 0,
+          "isDefault": false
+        }
+      ],
+      "controls": [
+        {
+          "type": "UKU Local Control",
+          "description": "Standard wall-mounted control panel",
+          "price": 1115,
+          "isDefault": true
+        },
+        {
+          "type": "UKU WiFi Control",
+          "description": "Smart control with mobile app connectivity",
+          "price": 1660,
+          "isDefault": false
+        }
+      ],
+      "safetyRailing": [
+        {
+          "type": "No Railing",
+          "description": "Standard installation without safety railing",
+          "price": 0,
+          "isDefault": true
+        },
+        {
+          "type": "Cedar Safety Railing",
+          "description": "Protective cedar wood railing for added safety",
+          "price": 365,
+          "isDefault": false
+        }
+      ]
+    },
+    "images": [
       {
-        "type": "UKU Local Control",
-        "description": "Standard wall-mounted control panel",
-        "price": 1115,
-        "isDefault": true,
-        "_id": "6814094308165731c6027fc3"
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
       },
       {
-        "type": "UKU WiFi Control",
-        "description": "Smart control with mobile app connectivity",
-        "price": 1660,
-        "isDefault": false,
-        "_id": "6814094308165731c6027fcb"
-      }
-    ],
-    "safetyRailing": [
-      {
-        "type": "No Railing",
-        "description": "Standard installation without safety railing",
-        "price": 0,
-        "isDefault": true,
-        "_id": "6814094308165731c6027fcz"
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461079/HUUM-DROP-b_mqy1ms.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
       },
       {
-        "type": "Cedar Safety Railing",
-        "description": "Protective cedar wood railing for added safety",
-        "price": 365,
-        "isDefault": false,
-        "_id": "6814094308165731c6027fdc"
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-e_klvemm.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-l_pownbw.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
       }
-    ]
-  },
-  "images": [
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
-      "isPrimary": true,
-      "_id": "6814094308165731c6027fcd"
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461079/HUUM-DROP-b_mqy1ms.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
-      "isPrimary": false,
-      "_id": "6814094308165731c6027fce"
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-e_klvemm.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
-      "isPrimary": false,
-      "_id": "6814094308165731c6027fcf"
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-l_pownbw.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
-      "isPrimary": false,
-      "_id": "6814094308165731c6027fd0"
-    }
-  ],
-  "warranty": {
-    "duration": 3,
-    "description": "3-year manufacturer warranty on electrical components"
-  },
-  "installation": {
-    "requirements": [
-      "Professional installation required",
-      "240V electrical connection",
-      "UKU sauna control system required",
-      "Minimum 55 kg of sauna stones with 5-10 cm diameter"
     ],
-    "safetyDistances": {
-      "sides": 150,
-      "front": 200,
-      "back": 150,
-      "top": 200
-    }
-  },
-  "features": [
-    {
-      "title": "Large Stone Capacity",
-      "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation",
-      "_id": "6814094308165731c6027fd1"
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
     },
-    {
-      "title": "Space-Saving Design",
-      "description": "Wall-mounted design saves floor space while maintaining high performance",
-      "_id": "6814094308165731c6027fd2"
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
+      }
     },
-    {
-      "title": "Smart Control Option",
-      "description": "Optional WiFi control for remote operation via smartphone",
-      "_id": "6814094308165731c6027fd3"
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "Wall-mounted design saves floor space while maintaining high performance"
+      },
+      {
+        "title": "Smart Control Option",
+        "description": "Optional WiFi control for remote operation via smartphone"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
+      }
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "HUUM DROP Electric Sauna Heater 9 kW",
+    "model": "DROP-9",
+    "power": 9,
+    "description": "HUUM DROP Electric Sauna Heater 9 kW is the standout model among HUUM heaters, largely thanks to its compact design. It is unique in the HUUM range as the only wall-mounted heater, saving considerable space in the sauna without compromising on the generous stone capacity that HUUM is known for. Inspired by the natural form of a water drop, its design introduces a rounded, softening element to the typically angular sauna space, infusing it with a touch of elegance. Functionality-wise, the Drop excels. It can hold up to 60 kg of stones, outperforming many wood-burning and electric heaters in stone capacity, which is crucial for prolonged and consistent steam production. This large stone capacity allows for the emission of gentle, soothing heat. When water is added, it generates a rich steam, more abundant than what is produced by heaters with a higher metal content, which can often lead to a less comfortable, harsher heat. The inclusion of a popular Wi-Fi control feature, enabling connection to the HUUM app for remote sauna activation, adds a layer of convenience, ensuring your sauna is ready for use the moment you arrive home. The combination of thoughtful design, superior functionality, and user convenience makes the Drop model, and HUUM heaters in general, highly regarded in the market.",
+    "basePrice": 3457,
+    "specifications": {
+      "roomSize": {
+        "min": 8,
+        "max": 13,
+        "imperial_min": 283,
+        "imperial_max": 460
+      },
+      "stoneCapacity": {
+        "weight": 55,
+        "imperial_weight": 121,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
+      },
+      "dimensions": {
+        "height": {
+          "metric": 590,
+          "imperial": 23.3
+        },
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
+        },
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
+        }
+      },
+      "weight": {
+        "metric": 11,
+        "imperial": 24.3
+      }
     },
-    {
-      "title": "Elegant Aesthetics",
-      "description": "Unique water drop design adds a sophisticated touch to your sauna",
-      "_id": "6814094308165731c6027fd4"
-    }
-  ],
-  "isFeatured": true,
-  "createdAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "updatedAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6816be02888789a55ea0f88e"
-  },
-  "name": "HUUM DROP Electric Sauna Heater 9 kW",
-  "model": "DROP-9",
-  "power": 9,
-  "description": "HUUM DROP Electric Sauna Heater 9 kW is the standout model among HUUM heaters, largely thanks to its compact design. It is unique in the HUUM range as the only wall-mounted heater, saving considerable space in the sauna without compromising on the generous stone capacity that HUUM is known for. Inspired by the natural form of a water drop, its design introduces a rounded, softening element to the typically angular sauna space, infusing it with a touch of elegance. Functionality-wise, the Drop excels. It can hold up to 60 kg of stones, outperforming many wood-burning and electric heaters in stone capacity, which is crucial for prolonged and consistent steam production. This large stone capacity allows for the emission of gentle, soothing heat. When water is added, it generates a rich steam, more abundant than what is produced by heaters with a higher metal content, which can often lead to a less comfortable, harsher heat. The inclusion of a popular Wi-Fi control feature, enabling connection to the HUUM app for remote sauna activation, adds a layer of convenience, ensuring your sauna is ready for use the moment you arrive home. The combination of thoughtful design, superior functionality, and user convenience makes the Drop model, and HUUM heaters in general, highly regarded in the market.",
-  "basePrice": 3457,
-  "specifications": {
-    "roomSize": {
-      "min": 8,
-      "max": 13,
-      "imperial_min": 283,
-      "imperial_max": 460
+    "options": {
+      "stones": [
+        {
+          "type": "Standard Stones",
+          "description": "55 kg / 121 lb",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 352,
+          "isDefault": true
+        },
+        {
+          "type": "No Stones",
+          "description": "0 kg (0 lb)",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 0,
+          "isDefault": false
+        }
+      ],
+      "controls": [
+        {
+          "type": "UKU Local Control",
+          "description": "Standard wall-mounted control panel",
+          "price": 1115,
+          "isDefault": true
+        },
+        {
+          "type": "UKU WiFi Control",
+          "description": "Smart control with mobile app connectivity",
+          "price": 1660,
+          "isDefault": false
+        }
+      ],
+      "safetyRailing": [
+        {
+          "type": "No Railing",
+          "description": "Standard installation without safety railing",
+          "price": 0,
+          "isDefault": true
+        },
+        {
+          "type": "Cedar Safety Railing",
+          "description": "Protective cedar wood railing for added safety",
+          "price": 365,
+          "isDefault": false
+        }
+      ]
     },
-    "stoneCapacity": {
-      "weight": 55,
-      "imperial_weight": 121,
-      "diameter": {
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461431/DROP-empty-web_wnzapy.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461431/HUUM-DROP-Indoor-3_rkrygn.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
+      }
+    ],
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
+    },
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
+      }
+    },
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "Wall-mounted design saves floor space while maintaining high performance"
+      },
+      {
+        "title": "Smart Control Option",
+        "description": "Optional WiFi control for remote operation via smartphone"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
+      }
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "HUUM HIVE Mini Electric Sauna Heater 10.5 kW",
+    "model": "DROP-10.5",
+    "power": 10.5,
+    "description": "The HUUM HIVE Mini ranks as the second most popular model in the HUUM heater lineup, following the Drop. Unlike the Drop, which is wall-mounted, the HIVE Mini is a floor-standing heater, consistent with the design of other HUUM models except for the Drop. A standout feature of the HIVE Mini is its exceptional stone capacity, the largest across all HUUM models, which significantly enhances its heating performance and steam production capabilities. The “Mini” in its name distinguishes it from the larger HIVE models, which offer higher power options of 12 kW, 15 kW, and 18 kW. The HIVE Mini, on the other hand, is available in 6 kW, 9 kW, and 10.5 kW sizes. Customers often inquire about the differences between the HIVE Mini and the Drop, especially when the kW ratings are similar. The primary distinction lies in the stone capacity. The HIVE Mini can hold over 331 pounds (approximately 150 kg) of stones, providing a much greater thermal mass. This increased mass of stones not only retains heat for a longer duration, enhancing the sauna’s heat retention capabilities but also produces a more abundant steam when water is poured over the rocks. This substantial stone capacity means that the heat emitted is more evenly distributed and maintains a consistent temperature for extended periods. When water hits the heated stones, the large surface area covered by the stones generates a rich, dense steam, creating a more intense and enjoyable sauna experience. The superior stone capacity of the HIVE Mini makes it a preferred choice for those seeking longer sauna sessions and more robust steam production, distinguishing it from other models like the Drop, despite similar power ratings.",
+    "basePrice": 2930,
+    "specifications": {
+      "roomSize": {
+        "min": 10,
+        "max": 16,
+        "imperial_min": 354,
+        "imperial_max": 566
+      },
+      "stoneCapacity": {
+        "weight": 150,
+        "imperial_weight": 331,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
+      },
+      "dimensions": {
+        "height": {
+          "metric": 750,
+          "imperial": 29.6
+        },
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
+        },
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
+        }
+      },
+      "weight": {
+        "metric": 16,
+        "imperial": 35.3
+      }
+    },
+    "options": {
+      "stones": [
+        {
+          "type": "Standard Stones",
+          "description": "",
+          "weight": {
+            "metric": 150,
+            "imperial": 331
+          },
+          "price": 880,
+          "isDefault": true
+        },
+        {
+          "type": "No Stones",
+          "description": "",
+          "weight": {
+            "metric": 0,
+            "imperial": 0
+          },
+          "price": 0,
+          "isDefault": false
+        }
+      ],
+      "controls": [
+        {
+          "type": "UKU Local Control",
+          "description": "Standard wall-mounted control panel",
+          "price": 1115,
+          "isDefault": true
+        },
+        {
+          "type": "UKU WiFi Control",
+          "description": "Smart control with mobile app connectivity",
+          "price": 1660,
+          "isDefault": false
+        }
+      ],
+      "safetyRailing": [
+        {
+          "type": "No Railing",
+          "description": "Standard installation without safety railing",
+          "price": 0,
+          "isDefault": true
+        },
+        {
+          "type": "Cedar Safety Railing",
+          "description": "Protective cedar wood railing for added safety",
+          "price": 410,
+          "isDefault": false
+        }
+      ]
+    },
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/HUUM-Hive-Mini-11_mael4r.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/Hive-Mini-and-air-tunnel_d4y7va.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/HUUM-Hive-Mini-11_mael4r.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460415/Hive-Mini-Indoor-2_a6avbr.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
+      }
+    ],
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
+    },
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
+      }
+    },
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "Wall-mounted design saves floor space while maintaining high performance"
+      },
+      {
+        "title": "Smart Control Option",
+        "description": "Optional WiFi control for remote operation via smartphone"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
+      }
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "Harvia KIP 8 kW Electric Sauna Heater",
+    "model": "KIP-8",
+    "power": 8,
+    "description": "The Harvia KIP 8 kW Electric Sauna Heater (Built-in Controls) is a sleek, wall-mounted electric sauna heater designed for sauna rooms from 250 to 425 cubic feet. Its built-in mechanical controls allow for easy temperature adjustment, a 1-hour runtime, and a delayed start function of up to 8 hours—ideal for preheating your sauna. The heater automatically shuts off after 60 minutes for safety. Crafted from durable stainless steel and equipped with a protective rock guard, the KIP is built for long-lasting performance. Its stone compartment holds up to 44 lb (20 kg) of sauna stones, delivering steady, traditional heat and steam. The dual-wall design helps reduce exterior temperatures, making it a safe and compact choice for tight installations. Made in Finland by Harvia—a global leader in sauna equipment—the KIP 8 offers dependable quality and performance at a reasonable price.",
+    "basePrice": 1550,
+    "specifications": {
+      "roomSize": {
+        "min": 10,
+        "max": 16,
+        "imperial_min": 354,
+        "imperial_max": 566
+      },
+      "stoneCapacity": {
+        "weight": 150,
+        "imperial_weight": 331,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
+      },
+      "dimensions": {
+        "height": {
+          "metric": 750,
+          "imperial": 29.6
+        },
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
+        },
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
+        }
+      },
+      "weight": {
+        "metric": 16,
+        "imperial": 35.3
+      }
+    },
+    "options": {
+      "stones": [
+        {
+          "type": "Standard Stones",
+          "description": "",
+          "weight": {
+            "metric": 150,
+            "imperial": 331
+          },
+          "price": 880,
+          "isDefault": true
+        },
+        {
+          "type": "No Stones",
+          "description": "",
+          "weight": {
+            "metric": 0,
+            "imperial": 0
+          },
+          "price": 0,
+          "isDefault": false
+        }
+      ],
+      "controls": [
+        {
+          "type": "UKU Local Control",
+          "description": "Standard wall-mounted control panel",
+          "price": 1115,
+          "isDefault": true
+        },
+        {
+          "type": "UKU WiFi Control",
+          "description": "Smart control with mobile app connectivity",
+          "price": 1660,
+          "isDefault": false
+        }
+      ]
+    },
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_1_ycw7vg.png",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_2_k9ivjr.png",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_3_ccvdbp.png",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_1_ycw7vg.png",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
+      }
+    ],
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
+    },
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
+      }
+    },
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "Wall-mounted design saves floor space while maintaining high performance"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
+      }
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "HUUM HIVE Mini 6 kW Electric Sauna Heater",
+    "model": "HUUM",
+    "power": "6",
+    "description": "The HUUM HIVE Mini ranks as the second most popular model in the HUUM heater lineup, following the Drop. Unlike the Drop, which is wall-mounted, the HIVE Mini is a floor-standing heater, consistent with the design of other HUUM models except for the Drop. A standout feature of the HIVE Mini is its exceptional stone capacity, the largest across all HUUM models, which significantly enhances its heating performance and steam production capabilities.",
+    "basePrice": 2631,
+    "specifications": {
+      "roomSize": {
         "min": 5,
-        "max": 10,
-        "imperial_min": 2,
-        "imperial_max": 4
-      }
-    },
-    "dimensions": {
-      "height": {
-        "metric": 590,
-        "imperial": 23.3
+        "max": 9,
+        "imperial_min": 177,
+        "imperial_max": 318
       },
-      "width": {
-        "metric": 390,
-        "imperial": 15.35
+      "stoneCapacity": {
+        "weight": 150,
+        "imperial_weight": 331,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
       },
-      "depth": {
-        "metric": 335,
-        "imperial": 13.2
-      }
-    },
-    "weight": {
-      "metric": 11,
-      "imperial": 24.3
-    }
-  },
-  "options": {
-    "stones": [
-      {
-        "type": "Standard Stones",
-        "description": "55 kg / 121 lb",
-        "weight": {
-          "metric": 55,
-          "imperial": 121
+      "dimensions": {
+        "height": {
+          "metric": 590,
+          "imperial": 23.3
         },
-        "price": 352,
-        "isDefault": true
-      },
-      {
-        "type": "No Stones",
-        "description": "0 kg (0 lb)",
-        "weight": {
-          "metric": 55,
-          "imperial": 121
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
         },
-        "price": 0,
-        "isDefault": false
-      }
-    ],
-    "controls": [
-      {
-        "type": "UKU Local Control",
-        "description": "Standard wall-mounted control panel",
-        "price": 1115,
-        "isDefault": true
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
+        }
       },
-      {
-        "type": "UKU WiFi Control",
-        "description": "Smart control with mobile app connectivity",
-        "price": 1660,
-        "isDefault": false
-      }
-    ],
-    "safetyRailing": [
-      {
-        "type": "No Railing",
-        "description": "Standard installation without safety railing",
-        "price": 0,
-        "isDefault": true
-      },
-      {
-        "type": "Cedar Safety Railing",
-        "description": "Protective cedar wood railing for added safety",
-        "price": 365,
-        "isDefault": false
-      }
-    ]
-  },
-  "images": [
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
-      "isPrimary": true
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461431/DROP-empty-web_wnzapy.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
-      "isPrimary": false
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
-      "isPrimary": false
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461431/HUUM-DROP-Indoor-3_rkrygn.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
-      "isPrimary": false
-    }
-  ],
-  "warranty": {
-    "duration": 3,
-    "description": "3-year manufacturer warranty on electrical components"
-  },
-  "installation": {
-    "requirements": [
-      "Professional installation required",
-      "240V electrical connection",
-      "UKU sauna control system required",
-      "Minimum 55 kg of sauna stones with 5-10 cm diameter"
-    ],
-    "safetyDistances": {
-      "sides": 150,
-      "front": 200,
-      "back": 150,
-      "top": 200
-    }
-  },
-  "features": [
-    {
-      "title": "Large Stone Capacity",
-      "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation",
-      "_id": "6814094308165731c6027fd1"
-    },
-    {
-      "title": "Space-Saving Design",
-      "description": "Wall-mounted design saves floor space while maintaining high performance",
-      "_id": "6814094308165731c6027fd2"
-    },
-    {
-      "title": "Smart Control Option",
-      "description": "Optional WiFi control for remote operation via smartphone"
-    },
-    {
-      "title": "Elegant Aesthetics",
-      "description": "Unique water drop design adds a sophisticated touch to your sauna"
-    }
-  ],
-  "isFeatured": true,
-  "createdAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "updatedAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6816c1a2888789a55ea0f890"
-  },
-  "name": "HUUM HIVE Mini Electric Sauna Heater 10.5 kW",
-  "model": "DROP-10.5",
-  "power": 10.5,
-  "description": "The HUUM HIVE Mini ranks as the second most popular model in the HUUM heater lineup, following the Drop. Unlike the Drop, which is wall-mounted, the HIVE Mini is a floor-standing heater, consistent with the design of other HUUM models except for the Drop. A standout feature of the HIVE Mini is its exceptional stone capacity, the largest across all HUUM models, which significantly enhances its heating performance and steam production capabilities. The “Mini” in its name distinguishes it from the larger HIVE models, which offer higher power options of 12 kW, 15 kW, and 18 kW. The HIVE Mini, on the other hand, is available in 6 kW, 9 kW, and 10.5 kW sizes. Customers often inquire about the differences between the HIVE Mini and the Drop, especially when the kW ratings are similar. The primary distinction lies in the stone capacity. The HIVE Mini can hold over 331 pounds (approximately 150 kg) of stones, providing a much greater thermal mass. This increased mass of stones not only retains heat for a longer duration, enhancing the sauna’s heat retention capabilities but also produces a more abundant steam when water is poured over the rocks. This substantial stone capacity means that the heat emitted is more evenly distributed and maintains a consistent temperature for extended periods. When water hits the heated stones, the large surface area covered by the stones generates a rich, dense steam, creating a more intense and enjoyable sauna experience. The superior stone capacity of the HIVE Mini makes it a preferred choice for those seeking longer sauna sessions and more robust steam production, distinguishing it from other models like the Drop, despite similar power ratings.",
-  "basePrice": 2930,
-  "specifications": {
-    "roomSize": {
-      "min": 10,
-      "max": 16,
-      "imperial_min": 354,
-      "imperial_max": 566
-    },
-    "stoneCapacity": {
-      "weight": 150,
-      "imperial_weight": 331,
-      "diameter": {
-        "min": 5,
-        "max": 10,
-        "imperial_min": 2,
-        "imperial_max": 4
+      "weight": {
+        "metric": 11,
+        "imperial": 24.3
       }
     },
-    "dimensions": {
-      "height": {
-        "metric": 750,
-        "imperial": 29.6
-      },
-      "width": {
-        "metric": 390,
-        "imperial": 15.35
-      },
-      "depth": {
-        "metric": 335,
-        "imperial": 13.2
-      }
-    },
-    "weight": {
-      "metric": 16,
-      "imperial": 35.3
-    }
-  },
-  "options": {
-    "stones": [
-      {
-        "type": "Standard Stones",
-        "description": "",
-        "weight": {
-          "metric": 150,
-          "imperial": 331
+    "options": {
+      "stones": [
+        {
+          "type": "Standard Stones",
+          "description": "HUUM Sauna Stones",
+          "weight": {
+            "metric": 15,
+            "imperial": 38
+          },
+          "price": 880,
+          "isDefault": true
         },
-        "price": 880,
-        "isDefault": true
-      },
-      {
-        "type": "No Stones",
-        "description": "",
-        "weight": {
-          "metric": 0,
-          "imperial": 0
+        {
+          "type": "No Stones",
+          "description": "0 kg (0 lb)",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 0,
+          "isDefault": false
+        }
+      ],
+      "controls": [
+        {
+          "type": "UKU Local Control",
+          "description": "Standard wall-mounted control panel",
+          "price": 1117,
+          "isDefault": true
         },
-        "price": 0,
-        "isDefault": false
-      }
-    ],
-    "controls": [
-      {
-        "type": "UKU Local Control",
-        "description": "Standard wall-mounted control panel",
-        "price": 1115,
-        "isDefault": true
-      },
-      {
-        "type": "UKU WiFi Control",
-        "description": "Smart control with mobile app connectivity",
-        "price": 1660,
-        "isDefault": false
-      }
-    ],
-    "safetyRailing": [
-      {
-        "type": "No Railing",
-        "description": "Standard installation without safety railing",
-        "price": 0,
-        "isDefault": true
-      },
-      {
-        "type": "Cedar Safety Railing",
-        "description": "Protective cedar wood railing for added safety",
-        "price": 410,
-        "isDefault": false
-      }
-    ]
-  },
-  "images": [
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/HUUM-Hive-Mini-11_mael4r.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
-      "isPrimary": true
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/Hive-Mini-and-air-tunnel_d4y7va.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
-      "isPrimary": false
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/HUUM-Hive-Mini-11_mael4r.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
-      "isPrimary": false
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460415/Hive-Mini-Indoor-2_a6avbr.jpg",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
-      "isPrimary": false
-    }
-  ],
-  "warranty": {
-    "duration": 3,
-    "description": "3-year manufacturer warranty on electrical components"
-  },
-  "installation": {
-    "requirements": [
-      "Professional installation required",
-      "240V electrical connection",
-      "UKU sauna control system required",
-      "Minimum 55 kg of sauna stones with 5-10 cm diameter"
-    ],
-    "safetyDistances": {
-      "sides": 150,
-      "front": 200,
-      "back": 150,
-      "top": 200
-    }
-  },
-  "features": [
-    {
-      "title": "Large Stone Capacity",
-      "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation"
-    },
-    {
-      "title": "Space-Saving Design",
-      "description": "Wall-mounted design saves floor space while maintaining high performance"
-    },
-    {
-      "title": "Smart Control Option",
-      "description": "Optional WiFi control for remote operation via smartphone"
-    },
-    {
-      "title": "Elegant Aesthetics",
-      "description": "Unique water drop design adds a sophisticated touch to your sauna"
-    }
-  ],
-  "isFeatured": true,
-  "createdAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "updatedAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6919332acad4bd6a6fd2ed70"
-  },
-  "name": "Harvia KIP 8 kW Electric Sauna Heater",
-  "model": "KIP-8",
-  "power": 8,
-  "description": "The Harvia KIP 8 kW Electric Sauna Heater (Built-in Controls) is a sleek, wall-mounted electric sauna heater designed for sauna rooms from 250 to 425 cubic feet. Its built-in mechanical controls allow for easy temperature adjustment, a 1-hour runtime, and a delayed start function of up to 8 hours—ideal for preheating your sauna. The heater automatically shuts off after 60 minutes for safety. Crafted from durable stainless steel and equipped with a protective rock guard, the KIP is built for long-lasting performance. Its stone compartment holds up to 44 lb (20 kg) of sauna stones, delivering steady, traditional heat and steam. The dual-wall design helps reduce exterior temperatures, making it a safe and compact choice for tight installations. Made in Finland by Harvia—a global leader in sauna equipment—the KIP 8 offers dependable quality and performance at a reasonable price.",
-  "basePrice": 1550,
-  "specifications": {
-    "roomSize": {
-      "min": 10,
-      "max": 16,
-      "imperial_min": 354,
-      "imperial_max": 566
-    },
-    "stoneCapacity": {
-      "weight": 150,
-      "imperial_weight": 331,
-      "diameter": {
-        "min": 5,
-        "max": 10,
-        "imperial_min": 2,
-        "imperial_max": 4
-      }
-    },
-    "dimensions": {
-      "height": {
-        "metric": 750,
-        "imperial": 29.6
-      },
-      "width": {
-        "metric": 390,
-        "imperial": 15.35
-      },
-      "depth": {
-        "metric": 335,
-        "imperial": 13.2
-      }
-    },
-    "weight": {
-      "metric": 16,
-      "imperial": 35.3
-    }
-  },
-  "options": {
-    "stones": [
-      {
-        "type": "Standard Stones",
-        "description": "",
-        "weight": {
-          "metric": 150,
-          "imperial": 331
+        {
+          "type": "UKU WiFi Control",
+          "description": "Smart control with mobile app connectivity",
+          "price": 1660,
+          "isDefault": false
+        }
+      ],
+      "safetyRailing": [
+        {
+          "type": "No Railing",
+          "description": "Standard installation without safety railing",
+          "price": 0,
+          "isDefault": true
         },
-        "price": 880,
-        "isDefault": true
+        {
+          "type": "Safety Railing for HIVE Mini",
+          "description": "Protective railing for added safety",
+          "price": 339,
+          "isDefault": false
+        }
+      ]
+    },
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
       },
       {
-        "type": "No Stones",
-        "description": "",
-        "weight": {
-          "metric": 0,
-          "imperial": 0
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461079/HUUM-DROP-b_mqy1ms.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-e_klvemm.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-l_pownbw.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
+      }
+    ],
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
+    },
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
+      }
+    },
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 15 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "The “Mini” in its name distinguishes it from the larger HIVE models, which offer higher power options of 12 kW, 15 kW, and 18 kW. The HIVE Mini, on the other hand, is available in 6 kW, 9 kW, and 10.5 kW sizes."
+      },
+      {
+        "title": "Smart Control Option",
+        "description": "Optional WiFi control for remote operation via smartphone"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
+      }
+    ],
+    "isFeatured": true
+  },
+  {
+    "name": "HUUM HIVE Mini 9 kW Electric Sauna Heater",
+    "model": "HUUM",
+    "power": 9,
+    "description": "The HUUM HIVE Mini ranks as the second most popular model in the HUUM heater lineup, following the Drop. Unlike the Drop, which is wall-mounted, the HIVE Mini is a floor-standing heater, consistent with the design of other HUUM models except for the Drop. A standout feature of the HIVE Mini is its exceptional stone capacity, the largest across all HUUM models, which significantly enhances its heating performance and steam production capabilities.",
+    "basePrice": 2794,
+    "specifications": {
+      "roomSize": {
+        "min": 8,
+        "max": 12,
+        "imperial_min": 283,
+        "imperial_max": 460
+      },
+      "stoneCapacity": {
+        "weight": 150,
+        "imperial_weight": 331,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
+      },
+      "dimensions": {
+        "height": {
+          "metric": 750,
+          "imperial": 23.3
         },
-        "price": 0,
-        "isDefault": false
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
+        },
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
+        }
+      },
+      "weight": {
+        "metric": 16,
+        "imperial": 35.3
       }
-    ],
-    "controls": [
+    },
+    "options": {
+      "stones": [
+        {
+          "type": "Standard Stones",
+          "description": "HUUM Sauna Stones",
+          "weight": {
+            "metric": 15,
+            "imperial": 38
+          },
+          "price": 880,
+          "isDefault": true
+        },
+        {
+          "type": "No Stones",
+          "description": "0 kg (0 lb)",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 0,
+          "isDefault": false
+        }
+      ],
+      "controls": [
+        {
+          "type": "UKU Local Control",
+          "description": "Standard wall-mounted control panel",
+          "price": 1117,
+          "isDefault": true
+        },
+        {
+          "type": "UKU WiFi Control",
+          "description": "Smart control with mobile app connectivity",
+          "price": 1660,
+          "isDefault": false
+        }
+      ]
+    },
+    "images": [
       {
-        "type": "UKU Local Control",
-        "description": "Standard wall-mounted control panel",
-        "price": 1115,
-        "isDefault": true
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
       },
       {
-        "type": "UKU WiFi Control",
-        "description": "Smart control with mobile app connectivity",
-        "price": 1660,
-        "isDefault": false
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461079/HUUM-DROP-b_mqy1ms.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-e_klvemm.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-l_pownbw.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
       }
-    ]
-  },
-  "images": [
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_1_ycw7vg.png",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
-      "isPrimary": true
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_2_k9ivjr.png",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
-      "isPrimary": false
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_3_ccvdbp.png",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
-      "isPrimary": false
-    },
-    {
-      "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1763258799/Harvia_KIP_1_ycw7vg.png",
-      "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
-      "isPrimary": false
-    }
-  ],
-  "warranty": {
-    "duration": 3,
-    "description": "3-year manufacturer warranty on electrical components"
-  },
-  "installation": {
-    "requirements": [
-      "Professional installation required",
-      "240V electrical connection",
-      "UKU sauna control system required",
-      "Minimum 55 kg of sauna stones with 5-10 cm diameter"
     ],
-    "safetyDistances": {
-      "sides": 150,
-      "front": 200,
-      "back": 150,
-      "top": 200
-    }
-  },
-  "features": [
-    {
-      "title": "Large Stone Capacity",
-      "description": "Holds up to 55 kg of stones for optimal heat retention and steam generation"
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
     },
-    {
-      "title": "Space-Saving Design",
-      "description": "Wall-mounted design saves floor space while maintaining high performance"
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
+      }
     },
-    {
-      "title": "Elegant Aesthetics",
-      "description": "Unique water drop design adds a sophisticated touch to your sauna"
-    }
-  ],
-  "isFeatured": true,
-  "createdAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 15 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "The “Mini” in its name distinguishes it from the larger HIVE models, which offer higher power options of 12 kW, 15 kW, and 18 kW. The HIVE Mini, on the other hand, is available in 6 kW, 9 kW, and 10.5 kW sizes."
+      },
+      {
+        "title": "Smart Control Option",
+        "description": "Optional WiFi control for remote operation via smartphone"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
+      }
+    ],
+    "isFeatured": true
   },
-  "updatedAt": {
-    "$date": "2025-05-01T23:52:35.621Z"
-  },
-  "__v": 0
-}]
+  {
+    "name": "Narvi NC 16 Wood-Burning Stove",
+    "model": "NC-16",
+    "power": 0,
+    "description": "The Narvi NC wood-burning stove is the epitome of understated luxury with its simple, yet timeless design. Whether your sauna is traditional or modern, the stove’s elegant style will complement its surroundings seamlessly. The large volume of stones, coupled with its robust construction, guarantees an even and pleasurable sauna experience. Despite its impressive size, the stove is highly efficient and requires minimal firewood to heat up.",
+    "basePrice": 2142,
+    "specifications": {
+      "roomSize": {
+        "min": 8,
+        "max": 12,
+        "imperial_min": 283,
+        "imperial_max": 460
+      },
+      "stoneCapacity": {
+        "weight": 150,
+        "imperial_weight": 331,
+        "diameter": {
+          "min": 5,
+          "max": 10,
+          "imperial_min": 2,
+          "imperial_max": 4
+        }
+      },
+      "dimensions": {
+        "height": {
+          "metric": 750,
+          "imperial": 23.3
+        },
+        "width": {
+          "metric": 390,
+          "imperial": 15.35
+        },
+        "depth": {
+          "metric": 335,
+          "imperial": 13.2
+        }
+      },
+      "weight": {
+        "metric": 16,
+        "imperial": 35.3
+      }
+    },
+    "options": {
+      "stones": [
+        {
+          "type": "Traditional Sauna Stones",
+          "description": "HUUM Sauna Stones",
+          "weight": {
+            "metric": 20,
+            "imperial": 38
+          },
+          "price": 270,
+          "isDefault": true
+        },
+        {
+          "type": "No Stones",
+          "description": "0 kg (0 lb)",
+          "weight": {
+            "metric": 55,
+            "imperial": 121
+          },
+          "price": 0,
+          "isDefault": false
+        }
+      ], 
+      "Chimney Kit": [
+        {
+          "type": "Chimney Kit",
+          "description": "No Chimney Kit",
+          "price": 0,
+          "isDefault": true
+        },
+        {
+          "type": "Narvi 4 inch to 6 inch chimney pipe adapter",
+          "description": "Narvi 4 inch to 6 inch chimney pipe adapter",
+          "price": 179,
+          "isDefault": false
+        },
+        {
+          "type": "Narvi Standard Chimney Flue Kit",
+          "description": "Narvi Standard Chimney Flue Kit",
+          "price": 1479,
+          "isDefault": false
+        }
+      ],
+      "Installation Base": [
+        {
+          "type": "No Installation Base",
+          "description": "No Installation",
+          "price": 0,
+          "isDefault": true
+        },
+        {
+          "type": "Installation Base, Black",
+          "description": "Installation Base, Black",
+          "price": 527,
+          "isDefault": false
+        },
+        {
+          "type": "Installation Base, Stainless",
+          "description": "Installation Base, Stainless",
+          "price": 561,
+          "isDefault": false
+        }
+      ],
+      "Floor Plate":[
+        {
+          "type": "No Floor Plate",
+          "description": "No Floor Plate",
+          "price": 0,
+          "isDefault": true
+        },
+        {
+          "type": "Floor Plate, Black",
+          "description": "Floor Plate, Black",
+          "price": 289,
+          "isDefault": false
+        },
+        {
+          "type": "Floor Plate, Stainless",
+          "description": "Floor Plate, Stainless",
+          "price": 299,
+          "isDefault": false
+        }
+      ]   
+    },
+    "images": [
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1762469780/torontosaunaco/stoves/Narvi_16_kdgcen.png",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
+        "isPrimary": true
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461079/HUUM-DROP-b_mqy1ms.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Side View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-e_klvemm.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Installed View",
+        "isPrimary": false
+      },
+      {
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461078/HUUM-DROP-l_pownbw.jpg",
+        "alt": "HUUM DROP Electric Sauna Heater 6kW - Detail View",
+        "isPrimary": false
+      }
+    ],
+    "warranty": {
+      "duration": 3,
+      "description": "3-year manufacturer warranty on electrical components"
+    },
+    "installation": {
+      "requirements": [
+        "Professional installation required",
+        "240V electrical connection",
+        "UKU sauna control system required",
+        "Minimum 55 kg of sauna stones with 5-10 cm diameter"
+      ],
+      "safetyDistances": {
+        "sides": 150,
+        "front": 200,
+        "back": 150,
+        "top": 200
+      }
+    },
+    "features": [
+      {
+        "title": "Large Stone Capacity",
+        "description": "Holds up to 15 kg of stones for optimal heat retention and steam generation"
+      },
+      {
+        "title": "Space-Saving Design",
+        "description": "The “Mini” in its name distinguishes it from the larger HIVE models, which offer higher power options of 12 kW, 15 kW, and 18 kW. The HIVE Mini, on the other hand, is available in 6 kW, 9 kW, and 10.5 kW sizes."
+      },
+      {
+        "title": "Smart Control Option",
+        "description": "Optional WiFi control for remote operation via smartphone"
+      },
+      {
+        "title": "Elegant Aesthetics",
+        "description": "Unique water drop design adds a sophisticated touch to your sauna"
+      }
+    ],
+    "isFeatured": true
+  }
+]

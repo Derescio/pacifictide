@@ -85,12 +85,13 @@ export function Hero({ user }: HeroProps) {
                     {/* Logo */}
                     <Link href="/" className="shrink-0">
                         <Image
-                            src="/images/White 2.png"
+                            src="/images/White Transparent.png"
+                            // src="/images/White 2.png"
                             alt="Pacific Tide"
                             width={0}
                             height={0}
                             priority
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 33vw"
                             className="h-48 w-auto md:h-48 lg:h-[140px]"
                         />
                     </Link>
