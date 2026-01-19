@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { ProductCard } from "@/components/product-card";
 import Link from "next/link";
+import { SaunaCategoryDropdown } from "@/components/sauna-category-dropdown";
 
 export default async function OutdoorPage() {
     // Fetch hot tubs, cold plunge tubs, and outdoor showers
@@ -8,7 +9,7 @@ export default async function OutdoorPage() {
         where: {
             isActive: true,
             type: {
-                in: ["outdoor", "outdoorshowers"],
+                in: ["outdoor",],
             },
         },
         include: {
@@ -24,7 +25,7 @@ export default async function OutdoorPage() {
     });
 
     return (
-        <div className="min-h-screen bg-neutral-200">
+        <div className="min-h-screen">
             <div className="mx-auto w-full max-w-6xl px-6 py-12">
                 {/* Breadcrumb */}
                 <nav className="mb-6 flex items-center gap-2 text-sm text-neutral-600">
@@ -38,13 +39,15 @@ export default async function OutdoorPage() {
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="font-serif text-4xl font-light italic text-neutral-900 md:text-5xl">
-                        Outdoor Wellness
+                        Hot and Cold Plunge
                     </h1>
                     <p className="mt-4 max-w-2xl text-lg text-neutral-600">
-                        Explore our collection of hot tubs, cold plunge tubs, and outdoor showers for
-                        the ultimate outdoor wellness experience.
+                        Discover our hot and cold plunge collection, perfect for outdoor installation and year-round wellness.
                     </p>
                 </div>
+
+                {/* Category Dropdown */}
+                <SaunaCategoryDropdown currentCategory="outdoor" />
 
                 {/* Category Sections */}
                 <div className="space-y-12">

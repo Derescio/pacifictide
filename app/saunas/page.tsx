@@ -1,20 +1,15 @@
 import { prisma } from "@/lib/prisma";
 import { ProductCard } from "@/components/product-card";
-import Link from "next/link";
-
-const CATEGORIES = [
-    { value: "all", label: "All Saunas", href: "/saunas" },
-    { value: "cube", label: "Cube", href: "/saunas/cube" },
-    { value: "barrel", label: "Barrel", href: "/saunas/barrel" },
-    { value: "indoor", label: "Indoor", href: "/saunas/indoor" },
-    { value: "outdoor", label: "Outdoor", href: "/saunas/outdoor" },
-    { value: "outdoorshowers", label: "Outdoor Showers", href: "/saunas/outdoorshowers" },
-];
+import { SaunaCategoryDropdown } from "@/components/sauna-category-dropdown";
+import { AutoScroll } from "@/components/auto-scroll";
 
 export default async function SaunasPage() {
     const products = await prisma.product.findMany({
         where: {
             isActive: true,
+            type: {
+                in: ["cube", "barrel"],
+            },
         },
         include: {
             images: {
@@ -30,6 +25,7 @@ export default async function SaunasPage() {
 
     return (
         <div className="min-h-screen ">
+            <AutoScroll offsetY={150} />
             <div className="mx-auto w-full max-w-6xl px-6 py-12">
                 {/* Header */}
                 <div className="mb-8">
@@ -42,21 +38,8 @@ export default async function SaunasPage() {
                     </p>
                 </div>
 
-                {/* Category Filter */}
-                <div className="mb-8 flex flex-wrap gap-3">
-                    {CATEGORIES.map((category) => (
-                        <Link
-                            key={category.value}
-                            href={category.href}
-                            className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${category.value === "all"
-                                ? "bg-amber-400 text-black"
-                                : "bg-white/50 text-neutral-700 hover:bg-white"
-                                }`}
-                        >
-                            {category.label}
-                        </Link>
-                    ))}
-                </div>
+                {/* Category Dropdown */}
+                <SaunaCategoryDropdown currentCategory="all" />
 
                 {/* Products Grid */}
                 {products.length === 0 ? (

@@ -18,7 +18,8 @@ const navLinks = [
     { href: "/saunas", label: "Saunas", hasDropdown: true },
     { href: "/heaters", label: "Heaters" },
     { href: "/plunge", label: "Hot and Cold Plunge" },
-    { href: "/about", label: "About" },
+    //  { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
 ];
 
 export function MobileNav() {
