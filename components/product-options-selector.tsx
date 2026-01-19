@@ -66,7 +66,7 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
     const [selectedWoodType, setSelectedWoodType] = useState<string | null>(null);
     const [selectedUpgrades, setSelectedUpgrades] = useState<string[]>([]);
 
-    
+
     // Calculate total price
     const totalPrice = useMemo(() => {
         let total = product.basePrice;
@@ -101,7 +101,7 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
                 if (railingOption) total += railingOption.price;
             }
         }
-        
+
         // Add installation option
         if (selectedInstallation) {
             const installOption = product.options.find((opt) => opt.id === selectedInstallation);
@@ -139,7 +139,7 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
     const installationOptions = product.options.filter((opt) => opt.optionType === "INSTALLATION");
     const woodTypeOptions = product.options.filter((opt) => opt.optionType === "WOOD_TYPE");
     const addonOptions = product.options.filter((opt) => opt.optionType === "FINISH"); // Add-Ons (additional_upgrades)
-    
+
     // Helper function to extract image URL from category field
     const getImageFromCategory = (categoryJson: string | null) => {
         if (!categoryJson) return null;
@@ -221,91 +221,91 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
                         <AccordionContent>
                             <div className="space-y-4 pt-2">
                                 <div className="space-y-3">
-                        {product.heaters.map((heater) => {
-                            const primaryImage = heater.images.find((img) => img.isPrimary) || heater.images[0];
-                            return (
-                                <button
-                                    key={heater.id}
-                                    onClick={() => {
-                                        setSelectedHeater(heater);
-                                        setSelectedHeaterOptions({});
-                                    }}
-                                    className={`w-full rounded-lg border-2 p-4 text-left transition-all ${selectedHeater?.id === heater.id
-                                        ? "border-amber-400 bg-amber-50"
-                                        : "border-neutral-200 hover:border-neutral-300"
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-4">
-                                        {primaryImage && (
-                                            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded">
-                                                <Image
-                                                    src={primaryImage.url}
-                                                    alt={heater.name}
-                                                    fill
-                                                    className="object-cover"
-                                                    sizes="64px"
-                                                />
-                                            </div>
-                                        )}
-                                        <div className="flex-1">
-                                            <p className="font-medium text-neutral-900">{heater.name}</p>
-                                            <p className="text-sm text-neutral-600">
-                                                {heater.type === 'ELECTRIC' && heater.electricSpec ? (
-                                                    `${heater.electricSpec.power} kW • ${heater.model}`
-                                                ) : (
-                                                    `Wood-Burning • ${heater.model}`
-                                                )}
-                                            </p>
-                                        </div>
-                                        <p className="font-semibold text-neutral-900">
-                                            {formatPrice(heater.basePrice)}
-                                        </p>
-                                    </div>
-                                </button>
-                            );
-                        })}
+                                    {product.heaters.map((heater) => {
+                                        const primaryImage = heater.images.find((img) => img.isPrimary) || heater.images[0];
+                                        return (
+                                            <button
+                                                key={heater.id}
+                                                onClick={() => {
+                                                    setSelectedHeater(heater);
+                                                    setSelectedHeaterOptions({});
+                                                }}
+                                                className={`w-full rounded-lg border-2 p-4 text-left transition-all ${selectedHeater?.id === heater.id
+                                                    ? "border-amber-400 bg-amber-50"
+                                                    : "border-neutral-200 hover:border-neutral-300"
+                                                    }`}
+                                            >
+                                                <div className="flex items-center gap-4">
+                                                    {primaryImage && (
+                                                        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded">
+                                                            <Image
+                                                                src={primaryImage.url}
+                                                                alt={heater.name}
+                                                                fill
+                                                                className="object-cover"
+                                                                sizes="64px"
+                                                            />
+                                                        </div>
+                                                    )}
+                                                    <div className="flex-1">
+                                                        <p className="font-medium text-neutral-900">{heater.name}</p>
+                                                        <p className="text-sm text-neutral-600">
+                                                            {heater.type === 'ELECTRIC' && heater.electricSpec ? (
+                                                                `${heater.electricSpec.power} kW • ${heater.model}`
+                                                            ) : (
+                                                                `Wood-Burning • ${heater.model}`
+                                                            )}
+                                                        </p>
+                                                    </div>
+                                                    <p className="font-semibold text-neutral-900">
+                                                        {formatPrice(heater.basePrice)}
+                                                    </p>
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
                                 </div>
 
                                 {/* Heater Options */}
                                 {selectedHeater?.options && (
                                     <div className="space-y-4 rounded-lg bg-neutral-50 p-4">
-                    <h3 className="text-sm font-semibold text-neutral-900">Heater Options</h3>
+                                        <h3 className="text-sm font-semibold text-neutral-900">Heater Options</h3>
 
-                    {/* Dynamic Heater Options - Loop through all available options */}
-                    {selectedHeater.options &&
-                        Object.entries(selectedHeater.options as Record<string, any[]>).map(
-                            ([optionKey, optionValues]) => {
-                                // Format the label nicely (e.g., "Chimney Kit" stays as is, "stones" becomes "Stones")
-                                const optionLabel =
-                                    optionKey.charAt(0).toUpperCase() +
-                                    optionKey.slice(1).replace(/([A-Z])/g, " $1");
+                                        {/* Dynamic Heater Options - Loop through all available options */}
+                                        {selectedHeater.options &&
+                                            Object.entries(selectedHeater.options as Record<string, any[]>).map(
+                                                ([optionKey, optionValues]) => {
+                                                    // Format the label nicely (e.g., "Chimney Kit" stays as is, "stones" becomes "Stones")
+                                                    const optionLabel =
+                                                        optionKey.charAt(0).toUpperCase() +
+                                                        optionKey.slice(1).replace(/([A-Z])/g, " $1");
 
-                                return (
-                                    <div key={optionKey}>
-                                        <label className="mb-2 block text-sm font-medium text-neutral-700">
-                                            {optionLabel}
-                                        </label>
-                                        <select
-                                            value={(selectedHeaterOptions as any)[optionKey] || ""}
-                                            onChange={(e) =>
-                                                setSelectedHeaterOptions((prev) => ({
-                                                    ...prev,
-                                                    [optionKey]: e.target.value,
-                                                }))
-                                            }
-                                            className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20"
-                                        >
-                                            <option value="">Select {optionLabel.toLowerCase()}</option>
-                                            {optionValues.map((option: any, idx: number) => (
-                                                <option key={idx} value={option.type}>
-                                                    {option.type} - {formatPrice(option.price)}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                );
-                            }
-                        )}
+                                                    return (
+                                                        <div key={optionKey}>
+                                                            <label className="mb-2 block text-sm font-medium text-neutral-700">
+                                                                {optionLabel}
+                                                            </label>
+                                                            <select
+                                                                value={(selectedHeaterOptions as any)[optionKey] || ""}
+                                                                onChange={(e) =>
+                                                                    setSelectedHeaterOptions((prev) => ({
+                                                                        ...prev,
+                                                                        [optionKey]: e.target.value,
+                                                                    }))
+                                                                }
+                                                                className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20"
+                                                            >
+                                                                <option value="">Select {optionLabel.toLowerCase()}</option>
+                                                                {optionValues.map((option: any, idx: number) => (
+                                                                    <option key={idx} value={option.type}>
+                                                                        {option.type} - {formatPrice(option.price)}
+                                                                    </option>
+                                                                ))}
+                                                            </select>
+                                                        </div>
+                                                    );
+                                                }
+                                            )}
                                     </div>
                                 )}
                             </div>
@@ -328,52 +328,52 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
                         </AccordionTrigger>
                         <AccordionContent>
                             <div className="space-y-3 pt-2">
-                        {addonOptions.map((option) => {
-                            const isSelected = selectedUpgrades.includes(option.id);
-                            const imageUrl = getImageFromCategory(option.category);
-                            return (
-                                <button
-                                    key={option.id}
-                                    onClick={() => {
-                                        setSelectedUpgrades((prev) =>
-                                            isSelected
-                                                ? prev.filter((id) => id !== option.id)
-                                                : [...prev, option.id]
-                                        );
-                                    }}
-                                    className={`w-full rounded-lg border-2 p-4 text-left transition-all ${isSelected
-                                        ? "border-amber-400 bg-amber-50"
-                                        : "border-neutral-200 hover:border-neutral-300"
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-4">
-                                        <input
-                                            type="checkbox"
-                                            checked={isSelected}
-                                            onChange={() => { }}
-                                            className="h-4 w-4 shrink-0 rounded border-neutral-300 text-amber-400 focus:ring-amber-400"
-                                        />
-                                        {imageUrl && (
-                                            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded">
-                                                <Image
-                                                    src={imageUrl}
-                                                    alt={option.name}
-                                                    fill
-                                                    className="object-cover"
-                                                    sizes="64px"
+                                {addonOptions.map((option) => {
+                                    const isSelected = selectedUpgrades.includes(option.id);
+                                    const imageUrl = getImageFromCategory(option.category);
+                                    return (
+                                        <button
+                                            key={option.id}
+                                            onClick={() => {
+                                                setSelectedUpgrades((prev) =>
+                                                    isSelected
+                                                        ? prev.filter((id) => id !== option.id)
+                                                        : [...prev, option.id]
+                                                );
+                                            }}
+                                            className={`w-full rounded-lg border-2 p-4 text-left transition-all ${isSelected
+                                                ? "border-amber-400 bg-amber-50"
+                                                : "border-neutral-200 hover:border-neutral-300"
+                                                }`}
+                                        >
+                                            <div className="flex items-center gap-4">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={isSelected}
+                                                    onChange={() => { }}
+                                                    className="h-4 w-4 shrink-0 rounded border-neutral-300 text-amber-400 focus:ring-amber-400"
                                                 />
+                                                {imageUrl && (
+                                                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded">
+                                                        <Image
+                                                            src={imageUrl}
+                                                            alt={option.name}
+                                                            fill
+                                                            className="object-cover"
+                                                            sizes="64px"
+                                                        />
+                                                    </div>
+                                                )}
+                                                <div className="flex-1">
+                                                    <p className="font-medium text-neutral-900">{option.name}</p>
+                                                </div>
+                                                <p className="font-semibold text-neutral-900">
+                                                    + {formatPrice(option.price)}
+                                                </p>
                                             </div>
-                                        )}
-                                        <div className="flex-1">
-                                            <p className="font-medium text-neutral-900">{option.name}</p>
-                                        </div>
-                                        <p className="font-semibold text-neutral-900">
-                                            + {formatPrice(option.price)}
-                                        </p>
-                                    </div>
-                                </button>
-                            );
-                        })}
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </AccordionContent>
                     </AccordionItem>
@@ -392,49 +392,49 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
                         </AccordionTrigger>
                         <AccordionContent>
                             <div className="space-y-3 pt-2">
-                        {installationOptions.map((option) => {
-                            const isDIY = option.name.toLowerCase().includes("diy");
-                            // Extract just the base name without the existing delivery fee text
-                            const baseName = option.name.replace(/\s*\(\+\s*\$?\d+\s*Delivery\s*Fee\)/gi, "");
-                            const deliveryFee = 350; // Fixed delivery fee for DIY
-                            const imageUrl = getImageFromCategory(option.category);
-                            
-                            return (
-                                <button
-                                    key={option.id}
-                                    onClick={() => setSelectedInstallation(option.id)}
-                                    className={`w-full rounded-lg border-2 p-4 text-left transition-all ${selectedInstallation === option.id
-                                        ? "border-amber-400 bg-amber-50"
-                                        : "border-neutral-200 hover:border-neutral-300"
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-4">
-                                        {imageUrl && (
-                                            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded">
-                                                <Image
-                                                    src={imageUrl}
-                                                    alt={baseName}
-                                                    fill
-                                                    className="object-cover"
-                                                    sizes="64px"
-                                                />
-                                            </div>
-                                        )}
-                                        <div className="flex-1">
-                                            <p className="font-medium text-neutral-900">{baseName}</p>
-                                            {isDIY && option.price === 0 && (
-                                                <p className="text-xs text-neutral-600">
-                                                    (+ ${deliveryFee} Delivery Fee)
+                                {installationOptions.map((option) => {
+                                    const isDIY = option.name.toLowerCase().includes("diy");
+                                    // Extract just the base name without the existing delivery fee text
+                                    const baseName = option.name.replace(/\s*\(\+\s*\$?\d+\s*Delivery\s*Fee\)/gi, "");
+                                    const deliveryFee = 350; // Fixed delivery fee for DIY
+                                    const imageUrl = getImageFromCategory(option.category);
+
+                                    return (
+                                        <button
+                                            key={option.id}
+                                            onClick={() => setSelectedInstallation(option.id)}
+                                            className={`w-full rounded-lg border-2 p-4 text-left transition-all ${selectedInstallation === option.id
+                                                ? "border-amber-400 bg-amber-50"
+                                                : "border-neutral-200 hover:border-neutral-300"
+                                                }`}
+                                        >
+                                            <div className="flex items-center gap-4">
+                                                {imageUrl && (
+                                                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded">
+                                                        <Image
+                                                            src={imageUrl}
+                                                            alt={baseName}
+                                                            fill
+                                                            className="object-cover"
+                                                            sizes="64px"
+                                                        />
+                                                    </div>
+                                                )}
+                                                <div className="flex-1">
+                                                    <p className="font-medium text-neutral-900">{baseName}</p>
+                                                    {isDIY && option.price === 0 && (
+                                                        <p className="text-xs text-neutral-600">
+                                                            (+ ${deliveryFee} Delivery Fee)
+                                                        </p>
+                                                    )}
+                                                </div>
+                                                <p className="font-semibold text-neutral-900">
+                                                    {option.price === 0 ? "$0" : formatPrice(option.price)}
                                                 </p>
-                                            )}
-                                        </div>
-                                        <p className="font-semibold text-neutral-900">
-                                            {option.price === 0 ? "$0" : formatPrice(option.price)}
-                                        </p>
-                                    </div>
-                                </button>
-                            );
-                        })}
+                                            </div>
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </AccordionContent>
                     </AccordionItem>

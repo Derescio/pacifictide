@@ -1,10 +1,7 @@
 import { ProductCard } from '@/components/product-card';
 import Link from 'next/link';
 import { prisma } from "@/lib/prisma";
-
-
-
-
+import { SaunaCategoryDropdown } from "@/components/sauna-category-dropdown";
 
 const CubePage = async () => {
     const products = await prisma.product.findMany({
@@ -27,7 +24,7 @@ const CubePage = async () => {
     });
 
     return (
-        <div className="min-h-screen bg-neutral-200">
+        <div className="min-h-screen">
             <div className="mx-auto w-full max-w-6xl px-6 py-12">
                 {/* Breadcrumb */}
                 <nav className="mb-6 flex items-center gap-2 text-sm text-neutral-600">
@@ -41,13 +38,15 @@ const CubePage = async () => {
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="font-serif text-4xl font-light italic text-neutral-900 md:text-5xl">
-                        Outdoor Wellness
+                        Cube Saunas
                     </h1>
                     <p className="mt-4 max-w-2xl text-lg text-neutral-600">
-                        Explore our collection of hot tubs, cold plunge tubs, and outdoor showers for
-                        the ultimate outdoor wellness experience.
+                        Discover our modern cube-style saunas, combining sleek design with premium wellness features.
                     </p>
                 </div>
+
+                {/* Category Dropdown */}
+                <SaunaCategoryDropdown currentCategory="cube" />
 
                 {/* Category Sections */}
                 <div className="space-y-12">

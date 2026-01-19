@@ -23,61 +23,104 @@ export function ProductCard({ product }: ProductCardProps) {
         minimumFractionDigits: 0,
     }).format(Number(product.basePrice));
 
+    // Get capacity and features from specifications if available
+    const specs = product.specifications as any;
+    const capacity = specs?.capacity || specs?.room_size;
+    const features = specs?.features || [];
+
+    // Parse wood type if it's a JSON string
+    let woodTypeDisplay = null;
+    if (product.woodType) {
+        try {
+            const woodTypeObj = typeof product.woodType === 'string'
+                ? JSON.parse(product.woodType)
+                : product.woodType;
+
+            // Get the first wood type name from the object
+            const firstWoodType = Object.keys(woodTypeObj)[0];
+            if (firstWoodType && firstWoodType !== 'undefined') {
+                woodTypeDisplay = firstWoodType;
+            }
+        } catch {
+            // If it's not JSON, use it as-is
+            woodTypeDisplay = product.woodType;
+        }
+    }
+
     return (
-        <Link
-            href={`/saunas/${product.type}/${product.id}`}
-            className="group block overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-xl"
-        >
-            {/* Image */}
-            <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-                {primaryImage ? (
-                    <Image
-                        src={primaryImage.url}
-                        alt={primaryImage.altText || product.name}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                ) : (
-                    <div className="flex h-full items-center justify-center text-neutral-400">
-                        No image available
-                    </div>
-                )}
+        <>
+            <div className="border border-neutral-150">
+                <Link
+                    href={`/saunas/${product.type}/${product.id}`}
+                    className="group block overflow-hidden bg-white transition-all duration-300 hover:shadow-lg"
+                >
+                    <div className="relative aspect-square overflow-hidden bg-neutral-50">
+                        {primaryImage && (
+                            <Image
+                                src={primaryImage.url}
+                                alt={primaryImage.altText || product.name}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                        )}
 
-                {/* Category Badge */}
-                <div className="absolute left-3 top-3 rounded-full bg-amber-400 px-3 py-1 text-xs font-semibold uppercase text-black">
-                    {product.type}
-                </div>
-
-                {product.isFeatured && (
-                    <div className="absolute right-3 top-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white">
-                        Featured
+                        {product.isFeatured && (
+                            <div className="absolute right-3 top-3 rounded-sm bg-black/75 px-2.5 py-1 text-xs uppercase tracking-wide text-white">
+                                Featured
+                            </div>
+                        )}
                     </div>
-                )}
+
+                    <div className="p-6 bg-neutral-50">
+                        {/* Title and Price Row */}
+                        <div className="mb-2 flex items-start justify-between ">
+                            <h3 className="font-serif text-lg italic leading-tight text-neutral-800">
+                                {product.name}
+                            </h3>
+                            <span className="ml-4 shrink-0 text-md text-neutral-600">
+                                <span className="text-xs tracking-wider text-neutral-500">From </span>{formattedPrice}
+                            </span>
+                        </div>
+
+                        {/* Designation/Category */}
+                        <p className="mb-4 text-xs uppercase tracking-wider text-neutral-500">
+                            {product.designation || product.type}
+                        </p>
+
+                        {/* Feature Tags */}
+                        <div className="flex flex-wrap gap-x-4 gap-y-1">
+                            {capacity && (
+                                <span className="text-xs uppercase tracking-wide text-neutral-600">
+                                    {capacity}
+                                </span>
+                            )}
+                            {/* {woodTypeDisplay && (
+                        <span className="text-xs uppercase tracking-wide text-neutral-600">
+                            {woodTypeDisplay}
+                        </span>
+                    )} */}
+                            {features.length > 0 && (
+                                <div className="flex items-center gap-4">
+                                    {features
+                                        .slice(0, 2)
+                                        .map((feature: any, index: number) => (
+                                            <div key={index} className="flex items-center gap-2">
+                                                <span className="rounded-xs border border-neutral-200 px-2 py-1 text-xs uppercase tracking-wide text-neutral-600">
+                                                    {feature.name || feature}
+                                                </span>
+                                                {/* {index === 0 && features.length > 1 && (
+                                            <span className="text-neutral-600 text-xl">.</span>
+                                        )} */}
+                                            </div>
+                                        ))}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </Link>
             </div>
+        </>
 
-            {/* Content */}
-            <div className="p-5">
-                <h3 className="mb-2 font-serif text-xl font-semibold text-neutral-900 group-hover:text-amber-600 transition-colors">
-                    {product.name}
-                </h3>
-
-                {product.designation && (
-                    <p className="mb-3 text-sm text-neutral-600">{product.designation}</p>
-                )}
-
-                <div className="flex items-baseline justify-between">
-                    <div>
-                        <span className="text-sm text-neutral-600">Starting at</span>
-                        <p className="text-2xl font-bold text-neutral-900">{formattedPrice}</p>
-                    </div>
-
-                    <span className="text-sm font-medium text-amber-600 group-hover:underline">
-                        View Details →
-                    </span>
-                </div>
-            </div>
-        </Link>
     );
 }
 

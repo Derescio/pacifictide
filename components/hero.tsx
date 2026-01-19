@@ -19,8 +19,9 @@ export const navLinks = [
     { href: "/", label: "Home" },
     { href: "/saunas", label: "Saunas", hasDropdown: true },
     { href: "/heaters", label: "Heaters" },
-    { href: "/outdoor", label: "Hot and Cold Plunge" },
-    { href: "/about", label: "About" },
+    { href: "/saunas/outdoor", label: "Hot and Cold Plunge" },
+    // { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
 ];
 
 interface HeroProps {
@@ -74,7 +75,7 @@ export function Hero({ user }: HeroProps) {
                     priority
                 />
                 {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/45 md:bg-black/60" />
+                <div className="absolute inset-0 bg-black/60 md:bg-black/60" />
                 <div className="absolute inset-0 bg-linear-to-r from-black/30 via-transparent to-transparent" />
             </div>
 
@@ -209,7 +210,7 @@ export function Hero({ user }: HeroProps) {
                             <br />
                             Inspired by Nature
                         </h1>
-                        <p className="font-arsenalSC mt-6 max-w-xl text-lg leading-relaxed text-white md:text-xl">
+                        <p className="font-geistMono mt-6 max-w-xl text-lg leading-relaxed text-white md:text-xl">
                             Breathe deep, unwind fully, and enjoy the warmth. Discover saunas
                             designed to nurture calm, comfort, and an elevated sense of
                             wellness.
