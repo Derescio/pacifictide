@@ -53,7 +53,7 @@ export default async function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${arsenal.variable} ${arsenalSC.variable} antialiased`}
         >
-          <div className="px-2.5 pt-2.5">
+          <div className="px-1 pt-1">
             <Hero user={session?.user ?? null} />
           </div>
           <Providers>{children}</Providers>

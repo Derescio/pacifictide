@@ -87,30 +87,62 @@ BREAKING CHANGE: /api/login is now /api/auth/signin"
 
 ## Daily Workflow
 
-### Solo Development
+### Recommended: Development Branch + Pull Requests
+
+**This is the preferred workflow for PacificTide** - allows comprehensive PR descriptions and review process.
 
 ```bash
-# 1. Start your day - pull latest changes
-git pull origin main
+# 1. Start your day - make sure you're on development
+git checkout development
+git pull origin development
 
-# 2. Check current status
+# 2. Make your changes and test locally...
+
+# 3. Review what changed
 git status
-
-# 3. Make your changes...
-
-# 4. Review what changed
 git diff
 
-# 5. Stage changes (specific files preferred)
-git add components/hero.tsx
-git add components/nav-auth.tsx
-# Or stage all
+# 4. Stage changes
 git add .
 
-# 6. Commit with meaningful message
-git commit -m "feat(hero): update logo size for large screens"
+# 5. Commit with meaningful message
+git commit -m "feat(product): implement accordion UI for configuration"
 
-# 7. Push to remote
+# 6. Push to development branch
+git push origin development
+
+# 7. Go to GitHub and create Pull Request
+#    - Navigate to: https://github.com/Derescio/pacifictide
+#    - Click "Compare & pull request" button
+#    - Base: main ← Compare: development
+#    - Write comprehensive PR description (see template below)
+#    - Create Pull Request
+#    - Merge when ready
+
+# 8. After PR is merged, sync development with main
+git checkout development
+git pull origin main
+```
+
+**Why this workflow?**
+- ✅ Write detailed PR descriptions on GitHub
+- ✅ Review changes before production
+- ✅ Track deployment history
+- ✅ Easy rollback if issues arise
+- ✅ Professional commit management
+
+### Alternative: Direct Push (Quick Fixes Only)
+
+For very small, urgent hotfixes:
+
+```bash
+# 1. Pull latest
+git pull origin main
+
+# 2. Make quick fix
+# 3. Stage, commit, push
+git add .
+git commit -m "hotfix(auth): fix session timeout"
 git push origin main
 ```
 
@@ -189,35 +221,97 @@ feat(auth): add password reset functionality
 
 ### PR Description Template
 
+**Comprehensive template for detailed PRs:**
+
+```markdown
+## 📋 Description
+Provide a clear and detailed description of what this PR accomplishes and why it was needed.
+
+## 🎯 Type of Change
+- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
+- [ ] ✨ New feature (non-breaking change which adds functionality)
+- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] 📝 Documentation update
+- [ ] ♻️ Refactor (no functional changes)
+- [ ] 🎨 UI/Style changes
+- [ ] ⚡ Performance improvement
+
+## 🔧 Changes Made
+List all significant changes:
+- Added Shadcn accordion component for product configuration
+- Refactored `ProductOptionsSelector` to use accordion sections
+- Fixed initial pricing logic (heater now opt-in selection)
+- Updated heater schema to support electric and wood-burning types
+- Added visual indicators (checkmarks, badges) for selected options
+
+## 🎨 Screenshots / Videos (if applicable)
+**Before:**
+[Screenshot or video of old UI]
+
+**After:**
+[Screenshot or video of new UI]
+
+## 🧪 Testing
+- [ ] Tested locally on development server
+- [ ] Tested build process (`pnpm build`)
+- [ ] Tested on mobile viewport
+- [ ] Tested on desktop viewport
+- [ ] All features working as expected
+- [ ] No console errors
+
+## 📦 Database Changes
+- [ ] No database changes
+- [ ] Schema updated (migrations included)
+- [ ] Seed scripts updated
+- [ ] Requires `prisma generate`
+- [ ] Requires database reseed
+
+## 🚀 Deployment Notes
+Any special instructions for deployment:
+- Run `pnpm prisma generate` after deployment
+- Environment variables needed: [list if any]
+- Database migration required: [yes/no]
+
+## ✅ Checklist
+- [ ] Code follows project style guidelines
+- [ ] Self-reviewed my code
+- [ ] Commented complex/non-obvious code
+- [ ] Updated relevant documentation
+- [ ] No new warnings or errors
+- [ ] TypeScript types are properly defined
+- [ ] Build passes locally (`pnpm build`)
+- [ ] All linter rules passing
+
+## 🔗 Related Issues
+Fixes #[issue number] (if applicable)
+Relates to #[issue number] (if applicable)
+
+## 📸 Additional Context
+Any other context, design decisions, or considerations:
+- Why specific approach was chosen
+- Alternative approaches considered
+- Known limitations or future improvements needed
+```
+
+**Minimal template for small changes:**
+
 ```markdown
 ## Description
-Brief description of what this PR does.
+Brief description of the change.
 
 ## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
+- [ ] Bug fix / Feature / Docs / Refactor
 
-## Changes Made
-- Added password reset API endpoint
-- Created reset email template
-- Updated User model with reset token
-
-## Screenshots (if applicable)
-[Add screenshots here]
+## Changes
+- Change 1
+- Change 2
 
 ## Testing
 - [ ] Tested locally
-- [ ] Added/updated tests
-- [ ] All tests passing
+- [ ] Build passes
 
-## Checklist
-- [ ] Code follows project style
-- [ ] Self-reviewed my code
-- [ ] Commented complex code
-- [ ] Updated documentation
-- [ ] No new warnings
+## Screenshots (if UI changes)
+[Add here]
 ```
 
 ### Code Review Tips
@@ -420,15 +514,48 @@ gacp "fix: typo"      # add, commit, and push
 
 ## Quick Reference Card
 
+### PacificTide Workflow (Development → PR → Main)
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│              PACIFICTIDE DEVELOPMENT WORKFLOW                       │
+├─────────────────────────────────────────────────────────────────────┤
+│ 1. START          │ git checkout development                       │
+│                   │ git pull origin development                    │
+├─────────────────────────────────────────────────────────────────────┤
+│ 2. WORK           │ [Make your changes]                            │
+│                   │ pnpm dev  (test locally)                       │
+├─────────────────────────────────────────────────────────────────────┤
+│ 3. COMMIT         │ git add .                                      │
+│                   │ git commit -m "feat(scope): description"       │
+├─────────────────────────────────────────────────────────────────────┤
+│ 4. PUSH           │ git push origin development                    │
+├─────────────────────────────────────────────────────────────────────┤
+│ 5. CREATE PR      │ Go to GitHub → "Compare & pull request"       │
+│                   │ Base: main ← Compare: development              │
+│                   │ Write detailed description                     │
+│                   │ Create Pull Request                            │
+├─────────────────────────────────────────────────────────────────────┤
+│ 6. MERGE PR       │ Review changes on GitHub                       │
+│                   │ Click "Merge pull request"                     │
+│                   │ Vercel auto-deploys to production              │
+├─────────────────────────────────────────────────────────────────────┤
+│ 7. SYNC           │ git pull origin main                           │
+│                   │ (development now synced with main)             │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### General Git Commands
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    GIT QUICK REFERENCE                       │
 ├─────────────────────────────────────────────────────────────┤
-│ START DAY        │ git pull origin main                     │
+│ START DAY        │ git pull origin development              │
 │ NEW FEATURE      │ git checkout -b feature/name             │
 │ STAGE CHANGES    │ git add .                                │
 │ COMMIT           │ git commit -m "type(scope): message"     │
-│ PUSH             │ git push origin branch-name              │
+│ PUSH             │ git push origin development              │
 │ SWITCH BRANCH    │ git checkout branch-name                 │
 │ VIEW STATUS      │ git status                               │
 │ VIEW LOG         │ git log --oneline -10                    │
