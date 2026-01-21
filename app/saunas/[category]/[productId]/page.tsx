@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
-import { ProductImageGallery } from "@/components/product-image-gallery";
-import { ProductOptionsSelector } from "@/components/product-options-selector";
-import { ProductSpecifications } from "@/components/product-specifications";
+import { ProductImageGallery } from "@/components/shared/product-image-gallery";
+import { ProductOptionsSelector } from "@/components/shared/product-options-selector";
+//import { ProductSpecifications } from "@/components/shared/product-specifications";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -95,7 +95,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     {/* Left Column - Images */}
                     <div>
                         <ProductImageGallery images={images} productName={name} />
-                        
+
                         {/* Dimensions and Features Below Images */}
                         <div className="mt-6 space-y-4">
                             {/* Dimensions */}

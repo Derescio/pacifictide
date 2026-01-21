@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
-import { ProductCard } from '@/components/product-card';
-import { SaunaCategoryDropdown } from "@/components/sauna-category-dropdown";
+import { ProductCard } from '@/components/shared/product-card';
+import { SaunaCategoryDropdown } from "@/components/shared/sauna-category-dropdown";
 
 const BarrelPage = async () => {
     const products = await prisma.product.findMany({

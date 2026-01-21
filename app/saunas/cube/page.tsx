@@ -1,7 +1,7 @@
-import { ProductCard } from '@/components/product-card';
+import { ProductCard } from '@/components/shared/product-card';
 import Link from 'next/link';
 import { prisma } from "@/lib/prisma";
-import { SaunaCategoryDropdown } from "@/components/sauna-category-dropdown";
+import { SaunaCategoryDropdown } from "@/components/shared/sauna-category-dropdown";
 
 const CubePage = async () => {
     const products = await prisma.product.findMany({

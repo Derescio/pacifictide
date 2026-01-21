@@ -1,0 +1,190 @@
+"use client";
+
+import { useState } from "react";
+
+interface ContactFormProps {
+    onSubmit?: (data: FormData) => void | Promise<void>;
+    className?: string;
+    buttonText?: string;
+}
+
+interface FormData {
+    fullName: string;
+    email: string;
+    phone: string;
+    inquiryType: string;
+    vision: string;
+}
+
+export function ContactForm({
+    onSubmit,
+    className = "",
+    buttonText = "Request Consultation",
+}: ContactFormProps) {
+    const [formData, setFormData] = useState<FormData>({
+        fullName: "",
+        email: "",
+        phone: "",
+        inquiryType: "",
+        vision: "",
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => {
+        setFormData((prev) => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        try {
+            if (onSubmit) {
+                await onSubmit(formData);
+            } else {
+                // Default behavior: log to console
+                console.log("Form submitted:", formData);
+                alert("Thank you! We'll get back to you soon.");
+            }
+
+            // Reset form after successful submission
+            setFormData({
+                fullName: "",
+                email: "",
+                phone: "",
+                inquiryType: "",
+                vision: "",
+            });
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("There was an error submitting the form. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
+        <div className={`rounded-lg bg-white p-8 shadow-sm ${className}`}>
+            <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Full Name */}
+                <div>
+                    <label
+                        htmlFor="fullName"
+                        className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
+                    >
+                        Full Name
+                    </label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        required
+                        placeholder="JOHNATHAN DOE"
+                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
+                    />
+                </div>
+
+                {/* Email Address */}
+                <div>
+                    <label
+                        htmlFor="email"
+                        className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
+                    >
+                        Email Address
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="EMAIL@EXAMPLE.COM"
+                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
+                    />
+                </div>
+
+                {/* Phone Number */}
+                <div>
+                    <label
+                        htmlFor="phone"
+                        className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
+                    >
+                        Phone Number
+                    </label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+1 (555) 000-0000"
+                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
+                    />
+                </div>
+
+                {/* Inquiry Type */}
+                <div>
+                    <label
+                        htmlFor="inquiryType"
+                        className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
+                    >
+                        Inquiry Type
+                    </label>
+                    <select
+                        id="inquiryType"
+                        name="inquiryType"
+                        value={formData.inquiryType}
+                        onChange={handleChange}
+                        required
+                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 focus:border-amber-500 focus:outline-none focus:ring-0"
+                    >
+                        <option value="">Select an option</option>
+                        <option value="residential">Private Residential</option>
+                        <option value="commercial">Commercial Project</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="support">Product Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                {/* Your Vision */}
+                <div>
+                    <label
+                        htmlFor="vision"
+                        className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
+                    >
+                        Your Vision
+                    </label>
+                    <textarea
+                        id="vision"
+                        name="vision"
+                        rows={5}
+                        value={formData.vision}
+                        onChange={handleChange}
+                        required
+                        placeholder="DESCRIBE YOUR SPACE OR PROJECT REQUIREMENTS..."
+                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
+                    />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full rounded-sm bg-amber-200 px-8 py-4 text-sm font-medium uppercase tracking-wide text-neutral-900 transition-colors hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                    {isSubmitting ? "Submitting..." : buttonText}
+                </button>
+            </form>
+        </div>
+    );
+}
+

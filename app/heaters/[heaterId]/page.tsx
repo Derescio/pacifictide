@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { ProductImageGallery } from "@/components/product-image-gallery";
+import { ProductImageGallery } from "@/components/shared/product-image-gallery";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -159,12 +159,12 @@ export default async function HeaterPage({ params }: HeaterPageProps) {
                                                     {typeof specs.dimensions === "string"
                                                         ? specs.dimensions
                                                         : specs.dimensions.imperial
-                                                        ? specs.dimensions.imperial
-                                                        : specs.dimensions.width &&
-                                                          specs.dimensions.depth &&
-                                                          specs.dimensions.height
-                                                        ? `${specs.dimensions.width}" W × ${specs.dimensions.depth}" D × ${specs.dimensions.height}" H`
-                                                        : JSON.stringify(specs.dimensions)}
+                                                            ? specs.dimensions.imperial
+                                                            : specs.dimensions.width &&
+                                                                specs.dimensions.depth &&
+                                                                specs.dimensions.height
+                                                                ? `${specs.dimensions.width}" W × ${specs.dimensions.depth}" D × ${specs.dimensions.height}" H`
+                                                                : JSON.stringify(specs.dimensions)}
                                                 </span>
                                             </div>
                                         )}

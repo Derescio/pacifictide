@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
-import { ProductCard } from "@/components/product-card";
-import { SaunaCategoryDropdown } from "@/components/sauna-category-dropdown";
-import { AutoScroll } from "@/components/auto-scroll";
+import { ProductCard } from "@/components/shared/product-card";
+import { SaunaCategoryDropdown } from "@/components/shared/sauna-category-dropdown";
+import { AutoScroll } from "@/components/shared/auto-scroll";
 
 export default async function SaunasPage() {
     const products = await prisma.product.findMany({

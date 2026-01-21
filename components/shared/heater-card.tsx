@@ -30,10 +30,10 @@ export function HeaterCard({ heater }: HeaterCardProps) {
 
     // Determine heater type display
     const typeDisplay = heater.type === "ELECTRIC" ? "Electric Heater" : "Wood-Burning Heater";
-    
+
     // Get power or other key spec
-    const keySpec = electricSpec?.power 
-        ? `${electricSpec.power} kW` 
+    const keySpec = electricSpec?.power
+        ? `${electricSpec.power} kW`
         : specs?.room_size || specs?.capacity;
 
     return (

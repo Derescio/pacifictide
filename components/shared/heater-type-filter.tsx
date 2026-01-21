@@ -12,6 +12,7 @@ const HEATER_TYPES = [
     { value: "WOOD", label: "Wood-Burning" },
 ];
 
+
 export function HeaterTypeFilter({ currentType }: HeaterTypeFilterProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -33,11 +34,10 @@ export function HeaterTypeFilter({ currentType }: HeaterTypeFilterProps) {
                 <button
                     key={type.value}
                     onClick={() => handleTypeChange(type.value)}
-                    className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
-                        currentType === type.value
-                            ? "bg-amber-500 text-white shadow-md"
-                            : "bg-white text-neutral-700 hover:bg-neutral-100"
-                    }`}
+                    className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${currentType === type.value
+                        ? "bg-amber-500 text-white shadow-md"
+                        : "bg-white text-neutral-700 hover:bg-neutral-100"
+                        }`}
                 >
                     {type.label}
                 </button>
