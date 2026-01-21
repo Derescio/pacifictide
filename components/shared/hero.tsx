@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NavAuth } from "@/components/nav-auth";
-import { MobileNav } from "@/components/mobile-nav";
+import { NavAuth } from "@/components/Auth/nav-auth";
+import { MobileNav } from "@/components/shared/mobile-nav";
 import { AnimatePresence, motion } from "motion/react";
 
 // Sauna subcategories for dropdown

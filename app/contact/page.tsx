@@ -1,4 +1,5 @@
-import { AutoScroll } from "@/components/auto-scroll";
+import { AutoScroll } from "@/components/shared/auto-scroll";
+import { ContactForm } from "@/components/shared/contact-form";
 
 export default function ContactPage() {
     return (
@@ -22,107 +23,7 @@ export default function ContactPage() {
                 {/* Contact Grid */}
                 <div className="grid gap-12 lg:grid-cols-2">
                     {/* Left Column - Contact Form */}
-                    <div className="rounded-lg bg-white p-8 shadow-sm">
-                        <form className="space-y-6">
-                            {/* Full Name */}
-                            <div>
-                                <label
-                                    htmlFor="fullName"
-                                    className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
-                                >
-                                    Full Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="fullName"
-                                    name="fullName"
-                                    placeholder="JOHNATHAN DOE"
-                                    className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
-                                />
-                            </div>
-
-                            {/* Email Address */}
-                            <div>
-                                <label
-                                    htmlFor="email"
-                                    className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
-                                >
-                                    Email Address
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="EMAIL@EXAMPLE.COM"
-                                    className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
-                                />
-                            </div>
-
-                            {/* Phone Number */}
-                            <div>
-                                <label
-                                    htmlFor="phone"
-                                    className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
-                                >
-                                    Phone Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="+1 (555) 000-0000"
-                                    className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
-                                />
-                            </div>
-
-                            {/* Inquiry Type */}
-                            <div>
-                                <label
-                                    htmlFor="inquiryType"
-                                    className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
-                                >
-                                    Inquiry Type
-                                </label>
-                                <select
-                                    id="inquiryType"
-                                    name="inquiryType"
-                                    className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 focus:border-amber-500 focus:outline-none focus:ring-0"
-                                >
-                                    <option value="">Select an option</option>
-                                    <option value="residential">Private Residential</option>
-                                    <option value="commercial">Commercial Project</option>
-                                    <option value="consultation">General Consultation</option>
-                                    <option value="support">Product Support</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            {/* Your Vision */}
-                            <div>
-                                <label
-                                    htmlFor="vision"
-                                    className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
-                                >
-                                    Your Vision
-                                </label>
-                                <textarea
-                                    id="vision"
-                                    name="vision"
-                                    rows={5}
-                                    placeholder="DESCRIBE YOUR SPACE OR PROJECT REQUIREMENTS..."
-                                    className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
-                                />
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full rounded-sm bg-amber-500 px-8 py-4 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-amber-600"
-                            >
-                                Request Consultation
-                            </button>
-                        </form>
-                    </div>
+                    <ContactForm />
 
                     {/* Right Column - Contact Information */}
                     <div className="space-y-8">

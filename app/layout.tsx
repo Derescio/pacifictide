@@ -3,8 +3,8 @@ import { auth } from "@/lib/auth";
 import { Geist, Geist_Mono, Playfair_Display, Arsenal, Arsenal_SC } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
-import { Hero } from "@/components/hero";
-import { Footer } from "@/components/footer";
+import { Hero } from "@/components/shared/hero";
+import { Footer } from "@/components/shared/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,7 +1,7 @@
-import { HeaterCard } from '@/components/heater-card';
+import { HeaterCard } from '@/components/shared/heater-card';
 import { prisma } from "@/lib/prisma";
-import { AutoScroll } from "@/components/auto-scroll";
-import { HeaterTypeFilter } from "@/components/heater-type-filter";
+import { AutoScroll } from "@/components/shared/auto-scroll";
+import { HeaterTypeFilter } from "@/components/shared/heater-type-filter";
 import { HeaterType } from "@prisma/client";
 
 interface HeatersPageProps {
