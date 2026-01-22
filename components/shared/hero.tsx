@@ -215,19 +215,21 @@ export function Hero({ user }: HeroProps) {
                             designed to nurture calm, comfort, and an elevated sense of
                             wellness.
                         </p>
-                        <Link
-                            href="/saunas"
-                            className="mt-8 inline-flex items-center rounded-md bg-amber-400 px-7 py-3 text-sm font-semibold text-black shadow-sm transition-all hover:bg-amber-500 hover:shadow-md"
-                        >
-                            View Saunas
-                        </Link>
+                        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                            <Link
+                                href="/saunas"
+                                className="inline-flex items-center justify-center rounded-md bg-amber-400 px-7 py-3 text-sm font-semibold text-black shadow-sm transition-all hover:bg-amber-500 hover:shadow-md"
+                            >
+                                View Saunas
+                            </Link>
 
-                        <Link
-                            href="/contact"
-                            className="ml-3 mt-8 inline-flex items-center rounded-md border border-white/40 px-7 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
-                        >
-                            Free Consultation
-                        </Link>
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center justify-center rounded-md border border-white/40 px-7 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
+                            >
+                                Free Consultation
+                            </Link>
+                        </div>
 
                     </div>
                 </div>
