@@ -17,7 +17,7 @@ const footerLinks = {
         links: [
             { label: "Saunas", href: "/saunas" },
             { label: "Heaters", href: "/heaters" },
-            { label: "Hot & Cold Plunge", href: "/plunge" },
+            { label: "Hot & Cold Plunge", href: "/saunas/outdoor" },
             // { label: "Accessories", href: "/accessories" },
             // { label: "Custom Builds", href: "/custom" },
         ],
