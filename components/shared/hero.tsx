@@ -217,10 +217,18 @@ export function Hero({ user }: HeroProps) {
                         </p>
                         <Link
                             href="/saunas"
-                            className="mt-8 inline-flex items-center rounded-sm border-2 border-amber-400 bg-transparent px-6 py-3 text-sm font-medium text-amber-400 transition-all hover:bg-amber-400 hover:text-black"
+                            className="mt-8 inline-flex items-center rounded-md bg-amber-400 px-7 py-3 text-sm font-semibold text-black shadow-sm transition-all hover:bg-amber-500 hover:shadow-md"
                         >
                             View Saunas
                         </Link>
+
+                        <Link
+                            href="/contact"
+                            className="ml-3 mt-8 inline-flex items-center rounded-md border border-white/40 px-7 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
+                        >
+                            Free Consultation
+                        </Link>
+
                     </div>
                 </div>
             </div>

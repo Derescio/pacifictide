@@ -88,10 +88,10 @@ const saunaCards = [
         ),
     },
     {
-        category: "Outdoor Showers",
-        title: "The Cloudburst",
-        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1743097556/outdoor_new_1_mmvzib.jpg",
-        url: "/saunas/outdoorshowers",
+        category: "Cube Sauna",
+        title: "The Hudson",
+        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1720653158/torontosaunaco/Cubes/HU6110/hudson_900_pgonnk.jpg",
+        url: "/saunas/cube",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -117,13 +117,13 @@ export function SaunasCarousel() {
 
     return (
         <section className="py-6">
-            <div className="mb-8 px-4">
-                <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-                    Explore Our Saunas
-                </h2>
-                <p className="mt-2 text-lg text-neutral-800">
-                    Handcrafted saunas designed to transform your wellness routine.
-                </p>
+            <div className="mb-2 px-4">
+                <h1 className="md:text-center font-serif text-4xl font-light italic text-neutral-900 md:text-5xl">
+                    Featured Saunas
+                </h1>
+                {/* <p className="mt-2 text-lg text-neutral-800">
+                    Have a look at some of our top sellers to fit your lifestyle.
+                </p> */}
             </div>
             <Carousel items={cards} />
         </section>

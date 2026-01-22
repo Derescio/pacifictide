@@ -32,7 +32,7 @@ export function SaunaLifestyle() {
         {/* Image */}
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-neutral-100">
           <Image
-          src="/images/huum-v8U1U6FVkeg-unsplash(1).jpg"
+            src="https://res.cloudinary.com/dw4ev5whz/image/upload/v1762459566/torontosaunaco/stoves/LBench_sugkql.jpg"
             alt="Sauna interior lifestyle"
             fill
             className="object-cover rounded-2xl"
@@ -42,14 +42,14 @@ export function SaunaLifestyle() {
 
         {/* Steps */}
         <div>
-          <h2 className="mb-8 font-serif text-3xl font-semibold text-neutral-900">
+          <h1 className="font-serif text-4xl font-light italic text-neutral-900 md:text-5xl mb-8">
             Designed to Fit Your Life
-          </h2>
+          </h1>
 
           <ol className="space-y-6">
             {steps.map((step, index) => (
               <li key={index} className="flex gap-4">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-semibold text-black">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-400 text-sm font-semibold text-black">
                   {index + 1}
                 </span>
                 <div>
@@ -72,9 +72,9 @@ export function SaunaLifestyle() {
               <Button variant="default">Contact Us</Button>
             </Link>
           </div>
-         
+
         </div>
-    
+
       </div>
     </section>
   );
