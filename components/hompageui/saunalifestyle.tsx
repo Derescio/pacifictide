@@ -27,54 +27,61 @@ export function SaunaLifestyle() {
   ];
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24">
-      <div className="grid items-center gap-16 lg:grid-cols-2">
-        {/* Image */}
-        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-neutral-100">
-          <Image
-            src="https://res.cloudinary.com/dw4ev5whz/image/upload/v1762459566/torontosaunaco/stoves/LBench_sugkql.jpg"
-            alt="Sauna interior lifestyle"
-            fill
-            className="object-cover rounded-2xl"
-            priority
-          />
-        </div>
+    <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      {/* Modern Image with Overlay Content */}
+      <div className="relative min-h-[600px] overflow-hidden rounded-3xl bg-neutral-900 shadow-2xl md:aspect-21/9 md:min-h-0">
+        {/* Background Image */}
+        <Image
+          src="https://res.cloudinary.com/dw4ev5whz/image/upload/v1762459566/torontosaunaco/stoves/LBench_sugkql.jpg"
+          alt="Sauna interior lifestyle"
+          fill
+          className="object-cover"
+          priority
+        />
 
-        {/* Steps */}
-        <div>
-          <h1 className="font-serif text-4xl font-light italic text-neutral-900 md:text-5xl mb-8">
-            Designed to Fit Your Life
-          </h1>
+        {/* Gradient Overlay - Stronger on mobile for better readability */}
+        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/60 to-black/50 md:from-black/60 md:via-black/60 md:to-black/40" />
 
-          <ol className="space-y-6">
-            {steps.map((step, index) => (
-              <li key={index} className="flex gap-4">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-400 text-sm font-semibold text-black">
-                  {index + 1}
-                </span>
-                <div>
-                  <h3 className="font-medium text-neutral-900">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-neutral-600">
-                    {step.description}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          {/* Two CTA Buttons. View Saunas and Contact Us */}
-          <div className="flex gap-4 mt-8 ml-12">
-            <Link href="/saunas">
-              <Button variant="default">View Saunas</Button>
-            </Link>
-            <Link href="/contact">
-              <Button variant="default">Contact Us</Button>
-            </Link>
+        {/* Content Overlay */}
+        <div className="relative z-10 flex h-full flex-col justify-center px-6 py-12 md:px-16 lg:px-20">
+          <div className="max-w-2xl">
+            <h1 className="font-serif text-3xl font-light italic text-white md:text-5xl lg:text-6xl mb-6 md:mb-8">
+              Designed to Fit Your Life
+            </h1>
+
+            <ol className="space-y-4 md:space-y-5">
+              {steps.map((step, index) => (
+                <li key={index} className="flex gap-3 md:gap-4">
+                  <span className="flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-full bg-amber-400 text-xs md:text-sm font-semibold text-black">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-medium font-serif text-white text-base md:text-lg">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-white/80 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-3">
+              <Link href="/saunas" className="w-full sm:w-auto">
+                <Button variant="default" className="w-full border-amber-200 border text-white bg-white/10 hover:bg-white/20">
+                  View Saunas
+                </Button>
+              </Link>
+              <Link href="/contact" className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full border-white/40 text-white bg-white/10 hover:bg-white/20">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
