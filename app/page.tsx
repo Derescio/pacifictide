@@ -5,6 +5,7 @@ import { Footer } from "@/components/shared/footer";
 import { SaunaLifestyle } from "@/components/hompageui/saunalifestyle";
 import { SaunaBenefits } from "@/components/hompageui/saunabenefits";
 import { ContactForm } from "@/components/shared/contact-form";
+import { TrustedPartners } from "@/components/shared/trusted-partners";
 
 export default async function Home() {
   const session = await auth();
@@ -26,6 +27,7 @@ export default async function Home() {
           <SaunaBenefits />
           <p className="text-2xl font-bold text-center mb-8">Have Questions? Contact Us</p>
           <ContactForm />
+          <TrustedPartners />
         </main>
       </div>
 

@@ -58,11 +58,12 @@ export function Footer() {
             <div className="mx-auto max-w-6xl px-6 py-16 md:px-10 lg:px-12">
                 {/* Main Footer Content */}
                 <div className="grid gap-12 lg:grid-cols-12">
-                    {/* Newsletter Section */}
+
                     <div className="lg:col-span-4">
-                        <Link href="/" className="shrink-0">
+                        <Link href="/" >
                             <Image
-                                src="/images/White 2.png"
+                                // src="/images/White 2.png"
+                                src="/images/White Transparent.png"
                                 alt="Pacific Tide"
                                 width={0}
                                 height={0}
@@ -70,7 +71,7 @@ export function Footer() {
                                 priority
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 
-                                className="h-40 w-auto opacity-70 transition-opacity hover:opacity-100"
+                                className="md:mt-[-56px] ml-[-12px]  h-40 w-auto opacity-90 transition-opacity hover:opacity-100"
                             />
                         </Link>
 
