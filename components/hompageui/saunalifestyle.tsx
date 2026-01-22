@@ -45,7 +45,7 @@ export function SaunaLifestyle() {
         {/* Content Overlay */}
         <div className="relative z-10 flex h-full flex-col justify-center px-6 py-12 md:px-16 lg:px-20">
           <div className="max-w-2xl">
-            <h1 className="font-serif text-3xl font-light italic text-white md:text-5xl lg:text-6xl mb-6 md:mb-8">
+            <h1 className="font-serif text-3xl font-light italic text-white md:text-5xl lg:text-4xl mb-6 md:mb-8">
               Designed to Fit Your Life
             </h1>
 
@@ -59,7 +59,7 @@ export function SaunaLifestyle() {
                     <h3 className="font-medium font-serif text-white text-base md:text-lg">
                       {step.title}
                     </h3>
-                    <p className="text-sm md:text-base text-white/80 leading-relaxed">
+                    <p className="text-sm md:text-base font-semibold text-white/80 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
