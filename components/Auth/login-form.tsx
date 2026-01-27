@@ -20,6 +20,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { SignInResponse } from "next-auth/react";
 
 export function LoginForm({
   className,
@@ -31,18 +32,19 @@ export function LoginForm({
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
 
     try {
-      const result = await signIn("credentials", {
+      const result: SignInResponse | undefined = await signIn("credentials", {
         email,
         password,
         redirect: false,
       });
-
+      ;
       if (result?.error) {
         setError("Invalid email or password");
       } else {

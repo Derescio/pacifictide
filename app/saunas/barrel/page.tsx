@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ProductCard } from '@/components/shared/product-card';
 import { SaunaCategoryDropdown } from "@/components/shared/sauna-category-dropdown";
 
+export const revalidate = 3600;
+
 const BarrelPage = async () => {
     const products = await prisma.product.findMany({
         where: {

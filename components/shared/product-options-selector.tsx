@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import {
     Accordion,
@@ -9,6 +9,8 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
+import type { CartItem, CartSummary, EmailRequest } from "../../.utils/types";
+import { toast } from "sonner";
 
 interface ProductOptionsSelectorProps {
     product: {
@@ -65,6 +67,15 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
     }>({});
     const [selectedWoodType, setSelectedWoodType] = useState<string | null>(null);
     const [selectedUpgrades, setSelectedUpgrades] = useState<string[]>([]);
+    const [quoteDetails, setQuoteDetails] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+    });
+    const [isQuoteSubmitting, setIsQuoteSubmitting] = useState(false);
+    const [quoteError, setQuoteError] = useState<string | null>(null);
+    const [quoteSuccess, setQuoteSuccess] = useState(false);
 
 
     // Calculate total price
@@ -140,6 +151,22 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
     const woodTypeOptions = product.options.filter((opt) => opt.optionType === "WOOD_TYPE");
     const addonOptions = product.options.filter((opt) => opt.optionType === "FINISH"); // Add-Ons (additional_upgrades)
 
+    const selectedInstallationOption = selectedInstallation
+        ? product.options.find((opt) => opt.id === selectedInstallation) ?? null
+        : null;
+    const selectedWoodTypeOption = selectedWoodType
+        ? product.options.find((opt) => opt.id === selectedWoodType) ?? null
+        : null;
+    const selectedUpgradeOptions = selectedUpgrades
+        .map((upgradeId) => product.options.find((opt) => opt.id === upgradeId))
+        .filter((opt): opt is ProductOptionsSelectorProps["product"]["options"][0] => Boolean(opt));
+    const deliveryFee =
+        selectedInstallationOption &&
+            selectedInstallationOption.name.toLowerCase().includes("diy") &&
+            selectedInstallationOption.price === 0
+            ? 350
+            : 0;
+
     // Helper function to extract image URL from category field
     const getImageFromCategory = (categoryJson: string | null) => {
         if (!categoryJson) return null;
@@ -148,6 +175,103 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
             return data.image || null;
         } catch {
             return null;
+        }
+    };
+
+    const handleQuoteSubmit = async () => {
+        setQuoteError(null);
+        setQuoteSuccess(false);
+
+        if (!quoteDetails.name.trim() || !quoteDetails.email.trim()) {
+            setQuoteError("Name and email are required to request a quote.");
+            return;
+        }
+
+        const heaterOptions: Array<{ name: string; price: number }> = [];
+        if (selectedHeater?.options) {
+            const options = selectedHeater.options as Record<string, Array<{ type: string; price: number }>>;
+            Object.entries(options).forEach(([optionKey, optionValues]) => {
+                const selectedValue = (selectedHeaterOptions as Record<string, string | undefined>)[
+                    optionKey
+                ];
+                const match = optionValues.find((option) => option.type === selectedValue);
+                if (match) {
+                    const label =
+                        optionKey.charAt(0).toUpperCase() +
+                        optionKey.slice(1).replace(/([A-Z])/g, " $1");
+                    heaterOptions.push({
+                        name: `${label}: ${match.type}`,
+                        price: match.price,
+                    });
+                }
+            });
+        }
+
+        const cartItem: CartItem = {
+            name: product.name,
+            qty: 1,
+            price: product.basePrice,
+            configuration: {
+                woodType: selectedWoodTypeOption ? { name: selectedWoodTypeOption.name } : undefined,
+                stove: selectedHeater ? { name: selectedHeater.name } : undefined,
+                installation: selectedInstallationOption
+                    ? { name: selectedInstallationOption.name }
+                    : undefined,
+                delivery: deliveryFee
+                    ? { included: false, cost: deliveryFee }
+                    : undefined,
+                upgrades: selectedUpgradeOptions.map((upgrade) => ({
+                    name: upgrade.name,
+                    price: upgrade.price,
+                })),
+                heaterOptions: heaterOptions.length ? heaterOptions : undefined,
+            },
+        };
+
+        const cartSummary: CartSummary = {
+            subtotal: totalPrice,
+            shipping: deliveryFee,
+            tax: 0,
+            total: totalPrice + deliveryFee,
+        };
+
+        const payload: EmailRequest = {
+            name: quoteDetails.name.trim(),
+            email: quoteDetails.email.trim(),
+            phone: quoteDetails.phone.trim() || undefined,
+            subject: `Quote Request: ${product.name}`,
+            message:
+                quoteDetails.message.trim() ||
+                "Quote request submitted from the product page.",
+            isCartQuote: true,
+            cartItems: [cartItem],
+            cartSummary,
+        };
+
+        try {
+            setIsQuoteSubmitting(true);
+            const response = await fetch("/api/emails", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => null);
+                toast.error(errorData?.message ?? "Failed to send quote request.");
+                throw new Error(errorData?.message ?? "Failed to send quote request.");
+            }
+            toast.success("Quote request sent. We will reach out soon.");
+            setQuoteSuccess(true);
+        } catch (error) {
+            toast.error(error instanceof Error ? error.message : "Failed to send quote request.");
+            setQuoteError(
+                error instanceof Error ? error.message : "Failed to send quote request."
+            );
+        } finally {
+            setIsQuoteSubmitting(false);
         }
     };
 
@@ -447,8 +571,94 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
                     <span className="text-lg text-neutral-600">Total Price</span>
                     <span className="text-3xl font-bold text-neutral-900">{formatPrice(totalPrice)}</span>
                 </div>
-                <button className="w-full rounded-lg bg-amber-400 px-6 py-3 font-semibold text-black transition-colors hover:bg-amber-500">
-                    Request Quote
+                <hr className="my-4 mt-8" />
+                <p className="mb-4 text-xl text-neutral-600 font-semibold text-center">Ready to get started ? </p>
+                <p className="mb-4 text-xl text-neutral-600 font-semibold text-center">Send us an email about {product.name}.</p>
+                <div className="space-y-4">
+                    <div className="grid gap-3 md:grid-cols-2">
+                        <div>
+                            <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-600">
+                                Name
+                            </label>
+                            <input
+                                value={quoteDetails.name}
+                                onChange={(event) =>
+                                    setQuoteDetails((prev) => ({
+                                        ...prev,
+                                        name: event.target.value,
+                                    }))
+                                }
+                                placeholder="Your name"
+                                className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20"
+                            />
+                        </div>
+                        <div>
+                            <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-600">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                value={quoteDetails.email}
+                                onChange={(event) =>
+                                    setQuoteDetails((prev) => ({
+                                        ...prev,
+                                        email: event.target.value,
+                                    }))
+                                }
+                                placeholder="you@email.com"
+                                className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-600">
+                            Phone (optional)
+                        </label>
+                        <input
+                            type="tel"
+                            value={quoteDetails.phone}
+                            onChange={(event) =>
+                                setQuoteDetails((prev) => ({
+                                    ...prev,
+                                    phone: event.target.value,
+                                }))
+                            }
+                            placeholder="Phone number"
+                            className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20"
+                        />
+                    </div>
+                    <div>
+                        <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-neutral-600">
+                            Message (optional)
+                        </label>
+                        <textarea
+                            value={quoteDetails.message}
+                            onChange={(event) =>
+                                setQuoteDetails((prev) => ({
+                                    ...prev,
+                                    message: event.target.value,
+                                }))
+                            }
+                            placeholder="Any specific requests or delivery notes"
+                            rows={3}
+                            className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/20"
+                        />
+                    </div>
+                </div>
+                {quoteError && (
+                    <p className="mt-3 text-sm text-red-600">{quoteError}</p>
+                )}
+                {quoteSuccess && (
+                    <p className="mt-3 text-sm text-green-700">
+                        Quote request sent. We will reach out soon.
+                    </p>
+                )}
+                <button
+                    onClick={handleQuoteSubmit}
+                    disabled={isQuoteSubmitting}
+                    className="mt-5 w-full rounded-lg bg-amber-400 px-6 py-3 font-semibold text-black transition-colors hover:bg-amber-500 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                    {isQuoteSubmitting ? "Sending..." : "Request Quote"}
                 </button>
                 <p className="mt-3 text-center text-sm text-neutral-600">
                     Contact us for availability and shipping details
