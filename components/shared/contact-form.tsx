@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner"
 
 interface ContactFormProps {
     onSubmit?: (data: FormData) => void | Promise<void>;
@@ -15,6 +16,14 @@ interface FormData {
     inquiryType: string;
     vision: string;
 }
+
+const inquirySubjectMap: Record<string, string> = {
+    residential: "Private Residential",
+    commercial: "Commercial Project",
+    consultation: "General Consultation",
+    support: "Product Support",
+    other: "Other",
+};
 
 export function ContactForm({
     onSubmit,
@@ -47,9 +56,28 @@ export function ContactForm({
             if (onSubmit) {
                 await onSubmit(formData);
             } else {
-                // Default behavior: log to console
-                console.log("Form submitted:", formData);
-                alert("Thank you! We'll get back to you soon.");
+                const subject =
+                    inquirySubjectMap[formData.inquiryType] ?? "General Inquiry";
+                const response = await fetch("/api/emails", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: formData.fullName,
+                        email: formData.email,
+                        phone: formData.phone,
+                        subject: `Contact Form: ${subject}`,
+                        message: formData.vision,
+                    }),
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => null);
+                    throw new Error(errorData?.message ?? "Failed to send email.");
+                }
+
+                toast.success("Thank you for your inquiry! We'll get back to you soon.");
             }
 
             // Reset form after successful submission
@@ -62,7 +90,7 @@ export function ContactForm({
             });
         } catch (error) {
             console.error("Error submitting form:", error);
-            alert("There was an error submitting the form. Please try again.");
+            toast.error("There was an error submitting the form. Please try again.");
         } finally {
             setIsSubmitting(false);
         }

@@ -25,11 +25,12 @@ const footerLinks = {
     support: {
         title: "Support",
         links: [
-            { label: "Help Center", href: "/help", external: true },
-            { label: "Shipping & Delivery", href: "/shipping" },
-            { label: "Returns & Warranty", href: "/warranty" },
-            { label: "Installation Guide", href: "/installation", external: true },
-            { label: "Care & Maintenance", href: "/care" },
+            { label: "FAQ", href: "/help-center", external: true },
+            { label: "Terms of Service", href: "/terms-of-service" },
+            { label: "Warranty", href: "/warranty" },
+            { label: "Refund Policy", href: "/refund-policy" },
+
+
             { label: "Contact Us", href: "/contact" },
         ],
     },
@@ -46,8 +47,8 @@ const footerLinks = {
 };
 
 const legalLinks = [
-    { label: "Terms & Conditions", href: "/terms" },
-    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+
     { label: "Accessibility", href: "/accessibility" },
     { label: "Cookie Policy", href: "/cookies" },
 ];
@@ -178,7 +179,7 @@ export function Footer() {
 
 
                     {/* Legal Links */}
-                    <div className="flex flex-wrap gap-x-6 gap-y-2">
+                    {/* <div className="flex flex-wrap gap-x-6 gap-y-2">
                         {legalLinks.map((link) => (
                             <Link
                                 key={link.label}
@@ -188,7 +189,7 @@ export function Footer() {
                                 {link.label}
                             </Link>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Copyright */}

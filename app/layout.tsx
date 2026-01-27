@@ -5,6 +5,7 @@ import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Hero } from "@/components/shared/hero";
 import { Footer } from "@/components/shared/footer";
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +59,16 @@ export default async function RootLayout({
           </div>
           <Providers>{children}</Providers>
           <Footer />
+          <Toaster
+            position="top-center"
+            richColors
+            duration={2000}
+            theme="light"
+            style={{
+              background: "#f0f0f0",
+              color: "#333",
+            }}
+          />
         </body>
       </html>
     );
