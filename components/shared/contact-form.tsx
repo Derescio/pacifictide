@@ -115,7 +115,10 @@ export function ContactForm({
                         onChange={handleChange}
                         required
                         placeholder="Name"
-                        className=" text-sm w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
+                        className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
+                        text-black text-base
+                        placeholder:text-xs placeholder:text-neutral-400
+                        focus:border-amber-500 focus:outline-none focus:ring-0"
                     />
                 </div>
 
@@ -135,7 +138,10 @@ export function ContactForm({
                         onChange={handleChange}
                         required
                         placeholder="Email"
-                        className=" text-sm w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
+                        className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
+                        text-black text-base
+                        placeholder:text-xs placeholder:text-neutral-400
+                        focus:border-amber-500 focus:outline-none focus:ring-0"
                     />
                 </div>
 
@@ -154,17 +160,19 @@ export function ContactForm({
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="Phone number"
-                        className="text-sm w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
-                    />
+                        className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
+                            text-black text-base
+                            placeholder:text-xs placeholder:text-neutral-400
+                            focus:border-amber-500 focus:outline-none focus:ring-0"/>
                 </div>
 
                 {/* Inquiry Type */}
                 <div>
                     <label
                         htmlFor="inquiryType"
-                        className="mb-2 block text-xs tracking-wide text-neutral-500"
+                        className="mb-2 block text-xs tracking-wide text-neutral-900"
                     >
-                        Subject
+                        Inquiry Types
                     </label>
                     <select
                         id="inquiryType"
@@ -174,7 +182,7 @@ export function ContactForm({
                         required
                         className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 focus:border-amber-500 focus:outline-none focus:ring-0"
                     >
-                        <option value="">Subject</option>
+                        <option value="">Select Topic</option>
                         <option value="residential">Private Residential</option>
                         <option value="commercial">Commercial Project</option>
                         <option value="consultation">General Consultation</option>
@@ -187,7 +195,7 @@ export function ContactForm({
                 <div>
                     <label
                         htmlFor="vision"
-                        className="mb-2 block text-xs uppercase tracking-wide text-neutral-500"
+                        className="mb-2 block text-xs uppercase tracking-wide text-neutral-900"
                     >
                         Message
                     </label>
@@ -199,8 +207,10 @@ export function ContactForm({
                         onChange={handleChange}
                         required
                         placeholder="Ask us anything..."
-                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 placeholder:text-neutral-400 focus:border-amber-500 focus:outline-none focus:ring-0"
-                    />
+                        className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
+                            text-black text-base
+                            placeholder:text-xs placeholder:text-neutral-400
+                            focus:border-amber-500 focus:outline-none focus:ring-0"/>
                 </div>
 
                 {/* Submit Button */}

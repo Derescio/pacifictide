@@ -7,7 +7,7 @@ const saunaCards = [
         category: "Cube Sauna",
         title: "The Max",
         src: "/images/Max_Image_New_1.jpg",
-        url: "/saunas/cube",
+        url: "/saunas/cube/cmkk9bffr004n9c20ewohnscf",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -28,7 +28,7 @@ const saunaCards = [
         category: "Barrel Sauna",
         title: "Panoramic Barrel Sauna",
         src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1762898747/torontosaunaco/Barrell/IMG-20251111-WA0097_vtdwjx.jpg",
-        url: "/saunas/barrel",
+        url: "/saunas/barrel/cmkk9blfo008m9c20cm8u5fdb",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -49,7 +49,7 @@ const saunaCards = [
         category: "Cold Plunge",
         title: "Glacier Cold Plunge",
         src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1764645001/torontosaunaco/coldplunge/IMG-20251201-WA0005_xl97h9.jpg",
-        url: "/saunas/coldplunge",
+        url: "/saunas/outdoor/cmkk9be6500319c20pdluewm3",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -70,7 +70,7 @@ const saunaCards = [
         category: "Indoor Sauna",
         title: "The Cube 550",
         src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1720652998/torontosaunaco/Cubes/CU550/CU550_1_900_hehapo.jpg",
-        url: "/saunas/indoor",
+        url: "/saunas/indoor/cmkk9bmzn00a09c20mvrbtxys",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -91,7 +91,7 @@ const saunaCards = [
         category: "Cube Sauna",
         title: "The Hudson",
         src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1720653158/torontosaunaco/Cubes/HU6110/hudson_900_pgonnk.jpg",
-        url: "/saunas/cube",
+        url: "/saunas/cube/cmkk9bgs8005m9c2049ckdtuu",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
