@@ -25,7 +25,7 @@ export default async function Home() {
           <SaunaLifestyle />
           <SaunasCarousel />
           <SaunaBenefits />
-          <p className="text-2xl font-bold text-center mb-8">Have Questions? Contact Us</p>
+          <h1 className="mb-3 md:text-center font-serif text-2xl font-light italic text-neutral-900 md:text-4xl">Ready to Begin ? Contact Us</h1>
           <ContactForm />
           <TrustedPartners />
         </main>

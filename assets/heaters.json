@@ -847,7 +847,7 @@
     },
     "images": [
       {
-        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/HUUM-Hive-Mini-11_mael4r.jpg",
         "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
         "isPrimary": true
       },
@@ -987,7 +987,7 @@
     },
     "images": [
       {
-        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746461433/HUUM-DROP-9_erb4ln.jpg",
+        "url": "https://res.cloudinary.com/dw4ev5whz/image/upload/v1746460417/HUUM-Hive-Mini-11_mael4r.jpg",
         "alt": "HUUM DROP Electric Sauna Heater 6kW - Front View",
         "isPrimary": true
       },
@@ -1109,7 +1109,7 @@
           "price": 0,
           "isDefault": false
         }
-      ], 
+      ],
       "Chimney Kit": [
         {
           "type": "Chimney Kit",
@@ -1150,7 +1150,7 @@
           "isDefault": false
         }
       ],
-      "Floor Plate":[
+      "Floor Plate": [
         {
           "type": "No Floor Plate",
           "description": "No Floor Plate",
@@ -1169,7 +1169,7 @@
           "price": 299,
           "isDefault": false
         }
-      ]   
+      ]
     },
     "images": [
       {
