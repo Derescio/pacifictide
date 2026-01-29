@@ -25,7 +25,7 @@ export default async function SaunasPage() {
 
     return (
         <div className="min-h-screen ">
-            <AutoScroll offsetY={150} />
+            <AutoScroll offsetY={170} />
             <div className="mx-auto w-full max-w-6xl px-6 py-12">
                 {/* Header */}
                 <div className="mb-8">

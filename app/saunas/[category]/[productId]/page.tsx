@@ -4,6 +4,7 @@ import { ProductOptionsSelector } from "@/components/shared/product-options-sele
 //import { ProductSpecifications } from "@/components/shared/product-specifications";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AutoScroll } from "@/components/shared/auto-scroll";
 
 interface ProductPageProps {
     params: Promise<{
@@ -62,6 +63,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
     return (
         <div className="min-h-screen">
+            <AutoScroll offsetY={170} />
             <div className="mx-auto w-full max-w-6xl px-6 py-12">
                 {/* Breadcrumb */}
                 <nav className="mb-6 flex items-center gap-2 text-sm text-neutral-600">
