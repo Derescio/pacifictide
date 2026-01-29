@@ -101,7 +101,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                         {/* Dimensions and Features Below Images */}
                         <div className="mt-6 space-y-4">
                             {/* Dimensions */}
-                            {dimensions && (
+                            {/* {dimensions && (
                                 <div className="rounded-lg bg-white/50 p-4">
                                     <h3 className="mb-2 text-lg font-semibold text-neutral-900">Dimensions</h3>
                                     <div className="text-neutral-700">
@@ -122,10 +122,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                         })()}
                                     </div>
                                 </div>
-                            )}
+                            )} */}
 
                             {/* Features */}
-                            {specifications && (specifications as any).features && (
+                            {/* {specifications && (specifications as any).features && (
                                 <div className="rounded-lg bg-white/50 p-4">
                                     <h3 className="mb-3 text-lg font-semibold text-neutral-900">Features</h3>
                                     <ul className="space-y-2">
@@ -143,15 +143,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
                                         )}
                                     </ul>
                                 </div>
-                            )}
+                            )} */}
 
                             {/* Designation/Collection */}
-                            {designation && (
+                            {/* {designation && (
                                 <div className="rounded-lg bg-white/50 p-4">
                                     <h3 className="mb-2 text-lg font-semibold text-neutral-900">Collection</h3>
                                     <p className="text-neutral-700">{designation}</p>
                                 </div>
-                            )}
+                            )} */}
                         </div>
                     </div>
 

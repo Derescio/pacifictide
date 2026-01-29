@@ -1,6 +1,6 @@
 import { auth } from "@/lib/auth";
 import { Hero } from "@/components/shared/hero";
-import { SaunasCarousel } from "@/components/shared/saunas-carousel";
+import { FeaturedSaunas } from "@/components/shared/featured-saunas";
 import { Footer } from "@/components/shared/footer";
 import { SaunaLifestyle } from "@/components/hompageui/saunalifestyle";
 import { SaunaBenefits } from "@/components/hompageui/saunabenefits";
@@ -20,10 +20,10 @@ export default async function Home() {
       {/* Site Container - max-w-6xl for other content */}
       <div className="mx-auto w-full max-w-6xl px-2.5">
         <main className="py-2.5 md:py-10">
-          {/* Saunas Carousel */}
+          {/* Featured Saunas Carousel - fetches products with isFeatured: true */}
 
           <SaunaLifestyle />
-          <SaunasCarousel />
+          <FeaturedSaunas />
           <SaunaBenefits />
           <h1 className="mb-3 md:text-center font-serif text-2xl font-light italic text-neutral-900 md:text-4xl">Ready to Begin ? Contact Us</h1>
           <ContactForm />

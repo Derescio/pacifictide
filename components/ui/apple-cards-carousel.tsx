@@ -73,7 +73,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
+      const cardWidth = isMobile() ? 176 : 288; // (md:w-72)
       const gap = isMobile() ? 4 : 8;
       const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
@@ -200,7 +200,7 @@ export const Card = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
+              className="fixed inset-0 h-full w-full bg-black/50 backdrop-blur-xl"
             />
             <motion.div
               initial={{ opacity: 0 }}
@@ -208,49 +208,49 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-60 mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans shadow-md md:p-10 dark:bg-neutral-900"
+              className="relative z-60 mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-neutral-900 p-6 font-sans shadow-2xl md:p-12"
             >
               <button
-                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
+                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-colors hover:bg-white/20"
                 onClick={handleClose}
               >
-                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                <IconX className="h-5 w-5 text-[#E9DFD2]" />
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium text-black dark:text-white"
+                className="text-sm font-medium uppercase tracking-widest text-[#E9DFD2]/70"
               >
                 {card.category}
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 text-2xl font-semibold italic text-neutral-700 md:text-5xl dark:text-white"
+                className="mt-3 font-serif text-3xl font-light italic text-[#E9DFD2] md:text-5xl"
               >
                 {card.title}
               </motion.p>
-              <div className="py-10">{card.content}</div>
+              <div className="py-8 text-[#E9DFD2]/80 [&_p]:text-[#E9DFD2]/80 [&_li]:text-[#E9DFD2]/80">
+                {card.content}
+              </div>
               <motion.a
                 target="_self"
                 href={card.url}
                 onClick={handleClose}
                 layoutId={layout ? `view-product-${card.title}` : undefined}
-                className="mt-4 text-xl font-semibold text-neutral-700 md:text-2xl dark:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-3 text-base font-semibold text-[#E9DFD2] backdrop-blur-md transition-all hover:border-white/40 hover:bg-white/20 hover:shadow-lg md:text-lg"
               >
                 View Product
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </motion.a>
             </motion.div>
-
-            {/* <div className="absolute inset-0 z-60 h-full w-full bg-black/50 backdrop-blur-lg" />
-            <div className="absolute inset-0 z-60 h-full w-full bg-white/50 backdrop-blur-lg" />
-            <div className="absolute inset-0 z-60 h-full w-full bg-black/50 backdrop-blur-lg" /> */}
           </div>
-
         )}
       </AnimatePresence>
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-160 md:w-96 dark:bg-neutral-900"
+        className="relative z-10 flex h-64 w-44 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-96 md:w-72 dark:bg-neutral-900"
       >
         <div className="relative z-40 p-4 md:p-6">
           <motion.p
