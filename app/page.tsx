@@ -6,6 +6,7 @@ import { SaunaLifestyle } from "@/components/hompageui/saunalifestyle";
 import { SaunaBenefits } from "@/components/hompageui/saunabenefits";
 import { ContactForm } from "@/components/shared/contact-form";
 import { TrustedPartners } from "@/components/shared/trusted-partners";
+import { FeaturedBlogs } from "@/components/sanityblogs/featured-blogs";
 
 export default async function Home() {
   const session = await auth();
@@ -25,8 +26,10 @@ export default async function Home() {
           <SaunaLifestyle />
           <FeaturedSaunas />
           <SaunaBenefits />
+
           <h1 className="mb-3 md:text-center font-serif text-2xl font-light italic text-neutral-900 md:text-4xl">Ready to Begin ? Contact Us</h1>
           <ContactForm />
+          <FeaturedBlogs />
           <TrustedPartners />
         </main>
       </div>
