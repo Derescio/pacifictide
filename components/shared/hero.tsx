@@ -93,7 +93,7 @@ export function Hero({ user }: HeroProps) {
                             height={0}
                             priority
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 33vw"
-                            className="h-48 w-auto md:h-48 lg:h-[140px] ml-[-8px]"
+                            className="h-64 w-auto md:h-48 lg:h-[200px] ml-[-8px]"
                         />
                     </Link>
 
@@ -151,7 +151,7 @@ export function Hero({ user }: HeroProps) {
                                                         <Link
                                                             href="/saunas"
                                                             onClick={() => setIsSaunasOpen(false)}
-                                                            className="flex items-center rounded-lg px-4 py-2.5 text-sm font-medium text-amber-400 transition-colors hover:bg-white/10"
+                                                            className="flex items-center rounded-lg px-4 py-2.5 text-sm font-medium text-[#E9DFD2] transition-colors hover:bg-white/10"
                                                         >
                                                             View All Saunas
                                                         </Link>
@@ -206,26 +206,24 @@ export function Hero({ user }: HeroProps) {
                 <div className="px-6 pb-16 pt-12 md:px-10 md:pb-24 md:pt-16 lg:px-12 lg:pb-32 lg:pt-20">
                     <div className="max-w-2xl">
                         <h1 className="font-serif text-4xl font-light italic leading-tight text-white md:text-5xl lg:text-6xl">
-                            Luxury Saunas
+                            Canadian-Made
                             <br />
-                            Inspired by Nature
+                            Luxury Saunas
                         </h1>
                         <p className="font-geistMono mt-6 max-w-xl text-lg leading-relaxed text-white md:text-xl">
-                            Breathe deep, unwind fully, and enjoy the warmth. Discover saunas
-                            designed to nurture calm, comfort, and an elevated sense of
-                            wellness.
+                            Building Rituals Through Thoughtful Design.
                         </p>
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                             <Link
                                 href="/saunas"
-                                className="inline-flex items-center justify-center rounded-md bg-amber-400 px-7 py-3 text-sm font-semibold text-black shadow-sm transition-all hover:bg-amber-500 hover:shadow-md"
+                                className="inline-flex items-center justify-center rounded-md bg-[#E9DFD2] px-7 py-3 text-sm font-semibold text-black shadow-sm transition-all hover:bg-[#E9DFD2] hover:shadow-md"
                             >
                                 View Saunas
                             </Link>
 
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-md border border-white/40 px-7 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
+                                className="inline-flex items-center justify-center rounded-md border border-[#E9DFD2] px-7 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
                             >
                                 Free Consultation
                             </Link>

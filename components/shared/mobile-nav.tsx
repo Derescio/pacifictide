@@ -155,7 +155,7 @@ export function MobileNav() {
                                                                 <Link
                                                                     href="/saunas"
                                                                     onClick={closeMenu}
-                                                                    className="flex items-center rounded-xl px-4 py-2.5 text-sm font-medium text-amber-400 transition-colors hover:bg-white/10"
+                                                                    className="flex items-center rounded-xl px-4 py-2.5 text-sm font-medium text-[#E9DFD2] transition-colors hover:bg-white/10"
                                                                 >
                                                                     View All Saunas
                                                                 </Link>

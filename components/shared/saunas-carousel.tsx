@@ -25,10 +25,10 @@ const saunaCards = [
         ),
     },
     {
-        category: "Barrel Sauna",
-        title: "Panoramic Barrel Sauna",
-        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1762898747/torontosaunaco/Barrell/IMG-20251111-WA0097_vtdwjx.jpg",
-        url: "/saunas/barrel/cmkk9blfo008m9c20cm8u5fdb",
+        category: "Cube Sauna",
+        title: "The Neptune",
+        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1720653214/torontosaunaco/Cubes/NE6110/neptune_900x_u29c1e.webp",
+        url: "/saunas/cube/cmkk9bgs8005m9c2049ckdtuu",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
@@ -47,8 +47,8 @@ const saunaCards = [
     },
     {
         category: "Cold Plunge",
-        title: "Glacier Cold Plunge",
-        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1764645001/torontosaunaco/coldplunge/IMG-20251201-WA0005_xl97h9.jpg",
+        title: "The Glacier",
+        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1742164481/Arctic_Knotty_1_qzrx7j.jpg",
         url: "/saunas/outdoor/cmkk9be6500319c20pdluewm3",
         content: (
             <div className="space-y-4">
@@ -69,7 +69,7 @@ const saunaCards = [
     {
         category: "Indoor Sauna",
         title: "The Cube 550",
-        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1720652998/torontosaunaco/Cubes/CU550/CU550_1_900_hehapo.jpg",
+        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1720653426/torontosaunaco/Cubes/PU550%28Indoor%29/indoor550_dakclp.webp",
         url: "/saunas/indoor/cmkk9bmzn00a09c20mvrbtxys",
         content: (
             <div className="space-y-4">
@@ -87,11 +87,12 @@ const saunaCards = [
             </div>
         ),
     },
+
     {
-        category: "Cube Sauna",
-        title: "The Hudson",
-        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1720653158/torontosaunaco/Cubes/HU6110/hudson_900_pgonnk.jpg",
-        url: "/saunas/cube/cmkk9bgs8005m9c2049ckdtuu",
+        category: "Barrel Sauna",
+        title: "Panoramic Sauna",
+        src: "https://res.cloudinary.com/dw4ev5whz/image/upload/v1762896445/torontosaunaco/Barrell/Panoramic_2_ztinlc.png",
+        url: "/saunas/barrel/cmkk9blfo008m9c20cm8u5fdb",
         content: (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">

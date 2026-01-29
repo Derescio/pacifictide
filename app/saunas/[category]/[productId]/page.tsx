@@ -158,7 +158,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                         {/* Description */}
                         <div className="mb-2 rounded-lg bg-white/50">
                             <h2 className="mb-4 text-4xl  font-playfair text-gray-500">{name}</h2>
-                            <h4 className="text-xl font-semibold text-amber-400 font-Arsenal"> ${basePriceNumber}</h4>
+                            <h4 className="text-xl font-semibold text-black font-Arsenal"> ${basePriceNumber}</h4>
                             <p className="leading-relaxed text-neutral-700 mt-4">{description}</p>
                         </div>
 
