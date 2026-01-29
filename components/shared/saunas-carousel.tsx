@@ -42,7 +42,8 @@ export function SaunasCarouselClient({ products }: SaunasCarouselClientProps) {
         const content = (
             <div className="space-y-4">
                 <p className="text-neutral-600 dark:text-neutral-400">
-                    {product.description}
+                    {/* Truncate to just 2 sentences using the . as a marker. */}
+                    {product.description.split(".").slice(0, 2).join(".") + "."}
                 </p>
                 {features.length > 0 && (
                     <ul className="list-disc pl-5 text-neutral-600 dark:text-neutral-400">
