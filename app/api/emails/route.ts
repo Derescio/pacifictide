@@ -321,11 +321,11 @@ export async function POST(req: Request) {
         }
 
         const ownerEmail =
-            process.env.MAIL_TO ?? "damion.wilson@gmail.com";
+            process.env.MAIL_TO ?? "hello@pacifictide.ca";
         const mailOptions = {
             from: `Pacific Tide <${process.env.MAIL_USER}>`,
             to: ownerEmail,
-            // to: "damion.wilson@gmail.com",
+            //  cc: "tjallen@thetorontosaunaco.com",
             subject: emailSubject,
             html: emailContent,
             text: buildTextEmail(data),
