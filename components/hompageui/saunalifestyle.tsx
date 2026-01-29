@@ -49,15 +49,19 @@ export function SaunaLifestyle() {
     <>
       {/* Horizontal Benefits Banner */}
       <div className="w-full bg-[#E9DFD2] py-3 mt-12 rounded-md shadow-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 md:gap-8 lg:gap-12">
+        <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-2 sm:gap-4 md:gap-8 lg:gap-12">
           {benefits.map((benefit, index) => (
-            <div key={index} className="flex items-center gap-2">
-              <benefit.icon className="h-4 w-4 shrink-0 text-neutral-900 md:h-5 md:w-5" />
-              <span className="whitespace-nowrap text-xs font-semibold tracking-wide text-neutral-900 md:text-sm">
-                {benefit.text}
-              </span>
+            <div key={index} className="flex items-center gap-2 sm:gap-2">
+              {/* Icon + Text container - stacks on mobile, inline on sm+ */}
+              <div className="flex flex-col items-center gap-0.5 sm:flex-row sm:gap-2">
+                <benefit.icon className="h-4 w-4 shrink-0 text-neutral-900 sm:h-5 sm:w-5" />
+                <span className="text-center text-[10px] font-semibold leading-tight tracking-wide text-neutral-900 sm:text-xs md:text-sm">
+                  {benefit.text}
+                </span>
+              </div>
+              {/* Vertical divider */}
               {index < benefits.length - 1 && (
-                <span className="ml-4 hidden h-4 w-px bg-neutral-900/30 md:ml-8 md:block lg:ml-12" />
+                <span className="ml-1 h-8 w-px bg-neutral-900/30 sm:ml-2 sm:h-4 md:ml-6 lg:ml-10" />
               )}
             </div>
           ))}

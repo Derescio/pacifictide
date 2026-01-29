@@ -93,7 +93,7 @@ export function Hero({ user }: HeroProps) {
                             height={0}
                             priority
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 33vw"
-                            className="h-64 w-auto md:h-48 lg:h-[200px] ml-[-8px]"
+                            className="h-56 w-auto md:h-48 lg:h-[200px] ml-[-2px]"
                         />
                     </Link>
 
@@ -194,7 +194,7 @@ export function Hero({ user }: HeroProps) {
                     </div>
 
                     {/* Auth / Avatar */}
-                    <div className="flex items-center gap-4 ">
+                    <div className="flex items-center gap-1 ">
                         <NavAuth user={user} />
 
                         {/* Mobile Menu */}
