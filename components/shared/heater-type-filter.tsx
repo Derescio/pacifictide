@@ -35,7 +35,7 @@ export function HeaterTypeFilter({ currentType }: HeaterTypeFilterProps) {
                     key={type.value}
                     onClick={() => handleTypeChange(type.value)}
                     className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${currentType === type.value
-                        ? "bg-amber-500 text-white shadow-md"
+                        ? "bg-[#E9DFD2] text-black shadow-md"
                         : "bg-white text-neutral-700 hover:bg-neutral-100"
                         }`}
                 >

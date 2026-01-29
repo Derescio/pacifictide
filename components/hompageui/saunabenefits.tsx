@@ -6,13 +6,13 @@ export function SaunaBenefits() {
       icon: Flame,
       title: "Designed for Home Wellness",
       description:
-        "Thoughtfully designed saunas that transform your space into a private wellness retreat.",
+        "Crafted in Canada using premium wood and reliable heating systems, backed by long-term support.",
     },
     {
       icon: Sofa,
       title: "Comfort by Design",
       description:
-        "Ergonomic benches, balanced heat circulation, and natural materials for deep relaxation.",
+        "Thoughtfully designed saunas that transform your home into a private wellness retreat.",
     },
     {
       icon: ShieldCheck,
@@ -24,6 +24,7 @@ export function SaunaBenefits() {
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
+      {/* <h1 className="mb-3 md:text-center font-serif text-2xl font-light italic text-neutral-900 md:text-4xl">Why Choose Us ?</h1> */}
       <div className="grid gap-10 md:grid-cols-3">
         {features.map((item, index) => {
           const Icon = item.icon;

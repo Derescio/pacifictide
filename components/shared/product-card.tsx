@@ -71,7 +71,7 @@ export function ProductCard({ product }: ProductCardProps) {
                         )}
                     </div>
 
-                    <div className="p-6 bg-neutral-50">
+                    <div className="p-6 bg-[#f8f5f1]">
                         {/* Title and Price Row */}
                         <div className="mb-2 flex items-start justify-between ">
                             <h3 className="font-serif text-lg italic leading-tight text-neutral-800">

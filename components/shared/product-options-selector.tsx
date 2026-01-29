@@ -656,7 +656,7 @@ export function ProductOptionsSelector({ product }: ProductOptionsSelectorProps)
                 <button
                     onClick={handleQuoteSubmit}
                     disabled={isQuoteSubmitting}
-                    className="mt-5 w-full rounded-lg bg-amber-400 px-6 py-3 font-semibold text-black transition-colors hover:bg-amber-500 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="mt-5 w-full rounded-lg bg-black px-6 py-3 font-semibold text-[#E9DFD2] transition-colors hover:bg-[#f8f5f1] hover:text-black hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
                 >
                     {isQuoteSubmitting ? "Sending..." : "Request Quote"}
                 </button>

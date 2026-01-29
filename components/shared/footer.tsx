@@ -132,7 +132,7 @@ export function Footer() {
                     <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:col-span-8">
                         {Object.values(footerLinks).map((section) => (
                             <div key={section.title}>
-                                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-amber-400/80">
+                                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-[#E9DFD2]">
                                     {section.title}
                                 </h4>
                                 <ul className="space-y-3">

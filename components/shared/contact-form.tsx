@@ -118,7 +118,7 @@ export function ContactForm({
                         className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
                         text-black text-base
                         placeholder:text-xs placeholder:text-neutral-400
-                        focus:border-amber-500 focus:outline-none focus:ring-0"
+                        focus:border-[#E9DFD2] focus:outline-none focus:ring-0"
                     />
                 </div>
 
@@ -141,7 +141,7 @@ export function ContactForm({
                         className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
                         text-black text-base
                         placeholder:text-xs placeholder:text-neutral-400
-                        focus:border-amber-500 focus:outline-none focus:ring-0"
+                        focus:border-[#E9DFD2] focus:outline-none focus:ring-0"
                     />
                 </div>
 
@@ -163,7 +163,7 @@ export function ContactForm({
                         className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
                             text-black text-base
                             placeholder:text-xs placeholder:text-neutral-400
-                            focus:border-amber-500 focus:outline-none focus:ring-0"/>
+                            focus:border-[#E9DFD2] focus:outline-none focus:ring-0"/>
                 </div>
 
                 {/* Inquiry Type */}
@@ -180,7 +180,7 @@ export function ContactForm({
                         value={formData.inquiryType}
                         onChange={handleChange}
                         required
-                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 focus:border-amber-500 focus:outline-none focus:ring-0"
+                        className="w-full border-b border-neutral-300 bg-transparent px-0 py-3 text-neutral-900 focus:border-[#E9DFD2] focus:outline-none focus:ring-0"
                     >
                         <option value="">Select Topic</option>
                         <option value="residential">Private Residential</option>
@@ -210,14 +210,14 @@ export function ContactForm({
                         className="w-full border-b border-neutral-200 bg-transparent px-0 py-3 
                             text-black text-base
                             placeholder:text-xs placeholder:text-neutral-400
-                            focus:border-amber-500 focus:outline-none focus:ring-0"/>
+                            focus:border-[#E9DFD2] focus:outline-none focus:ring-0"/>
                 </div>
 
                 {/* Submit Button */}
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full rounded-sm bg-black px-8 py-4 text-sm font-medium uppercase tracking-wide text-amber-400 transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-50"
+                    className="w-full rounded-sm bg-black/85 px-8 py-4 text-sm font-medium uppercase tracking-wide text-[#E9DFD2] transition-colors hover:bg-black disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     {isSubmitting ? "Submitting..." : buttonText}
                 </button>
