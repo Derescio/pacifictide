@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { ProductCard } from "@/components/shared/product-card";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AutoScroll } from "@/components/shared/auto-scroll";
 
 const CATEGORIES = [
     { value: "all", label: "All Saunas", href: "/saunas" },
@@ -59,6 +60,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     console.log(category);
     return (
         <div className="min-h-screen bg-neutral-200">
+            <AutoScroll offsetY={170} />
             <div className="mx-auto w-full max-w-6xl px-6 py-12">
                 {/* Breadcrumb */}
                 <nav className="mb-6 flex items-center gap-2 text-sm text-neutral-600">
